@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -8,11 +8,11 @@ import {
   SafeAreaView,
   ScrollView,
   Alert,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { IniciarSesionScreenNavigationProp } from '../types/navigation';
-import { Colors, Theme } from '../constants/Colors';
-import { ArrowLeft, Eye, EyeOff } from 'lucide-react-native';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { IniciarSesionScreenNavigationProp } from "../types/navigation";
+import { Colors, Theme } from "../constants/Colors";
+import { ArrowLeft, Eye, EyeOff } from "lucide-react-native";
 
 interface LoginFormData {
   email: string;
@@ -26,10 +26,10 @@ interface LoginFormErrors {
 
 const IniciarSesionScreen: React.FC = () => {
   const navigation = useNavigation<IniciarSesionScreenNavigationProp>();
-  
+
   const [formData, setFormData] = useState<LoginFormData>({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const [errors, setErrors] = useState<LoginFormErrors>({});
@@ -40,15 +40,15 @@ const IniciarSesionScreen: React.FC = () => {
     const newErrors: LoginFormErrors = {};
 
     if (!formData.email.trim()) {
-      newErrors.email = 'El email es requerido';
+      newErrors.email = "El email es requerido";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email inválido';
+      newErrors.email = "Email inválido";
     }
 
     if (!formData.password) {
-      newErrors.password = 'La contraseña es requerida';
+      newErrors.password = "La contraseña es requerida";
     } else if (formData.password.length < 6) {
-      newErrors.password = 'Contraseña muy corta';
+      newErrors.password = "Contraseña muy corta";
     }
 
     setErrors(newErrors);
@@ -58,32 +58,28 @@ const IniciarSesionScreen: React.FC = () => {
   const handleLogin = async (): Promise<void> => {
     if (validateForm()) {
       setIsLoading(true);
-      
+
       // Simulate API call
       setTimeout(() => {
         setIsLoading(false);
-        Alert.alert(
-          'Bienvenido',
-          'Has iniciado sesión correctamente',
-          [
-            {
-              text: 'Continuar',
-              onPress: () => navigation.navigate('Dashboard'),
-            },
-          ]
-        );
+        Alert.alert("Bienvenido", "Has iniciado sesión correctamente", [
+          {
+            text: "Continuar",
+            onPress: () => navigation.navigate("Dashboard"),
+          },
+        ]);
       }, 1500);
     }
   };
 
   const handleForgotPassword = (): void => {
     Alert.alert(
-      'Restablecer contraseña',
-      'Se enviará un enlace de restablecimiento a tu email',
+      "Restablecer contraseña",
+      "Se enviará un enlace de restablecimiento a tu email",
       [
-        { text: 'Cancelar', style: 'cancel' },
-        { text: 'Enviar', onPress: () => console.log('Reset password') },
-      ]
+        { text: "Cancelar", style: "cancel" },
+        { text: "Enviar", onPress: () => console.log("Reset password") },
+      ],
     );
   };
 
@@ -108,7 +104,7 @@ const IniciarSesionScreen: React.FC = () => {
 
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
@@ -138,7 +134,9 @@ const IniciarSesionScreen: React.FC = () => {
               autoCorrect={false}
               editable={!isLoading}
             />
-            {errors.email && <Text style={styles.errorText}>{errors.email}</Text>}
+            {errors.email && (
+              <Text style={styles.errorText}>{errors.email}</Text>
+            )}
           </View>
 
           {/* Password Field */}
@@ -146,10 +144,15 @@ const IniciarSesionScreen: React.FC = () => {
             <Text style={styles.label}>Contraseña</Text>
             <View style={styles.passwordContainer}>
               <TextInput
-                style={[styles.passwordInput, errors.password && styles.inputError]}
+                style={[
+                  styles.passwordInput,
+                  errors.password && styles.inputError,
+                ]}
                 placeholder="Contraseña"
                 value={formData.password}
-                onChangeText={(text) => setFormData({ ...formData, password: text })}
+                onChangeText={(text) =>
+                  setFormData({ ...formData, password: text })
+                }
                 secureTextEntry={!showPassword}
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -167,13 +170,23 @@ const IniciarSesionScreen: React.FC = () => {
                 )}
               </TouchableOpacity>
             </View>
-            {errors.password && <Text style={styles.errorText}>{errors.password}</Text>}
+            {errors.password && (
+              <Text style={styles.errorText}>{errors.password}</Text>
+            )}
           </View>
 
           {/* Forgot Password */}
           <View style={styles.forgotPasswordContainer}>
-            <TouchableOpacity onPress={handleForgotPassword} disabled={isLoading}>
-              <Text style={[styles.forgotPasswordText, isLoading && styles.disabledText]}>
+            <TouchableOpacity
+              onPress={handleForgotPassword}
+              disabled={isLoading}
+            >
+              <Text
+                style={[
+                  styles.forgotPasswordText,
+                  isLoading && styles.disabledText,
+                ]}
+              >
                 ¿Olvidaste tu contraseña?
               </Text>
             </TouchableOpacity>
@@ -183,20 +196,25 @@ const IniciarSesionScreen: React.FC = () => {
 
       {/* Bottom Section */}
       <View style={styles.bottomSection}>
-        <TouchableOpacity 
-          style={[styles.loginButton, isLoading && styles.disabledButton]} 
+        <TouchableOpacity
+          style={[styles.loginButton, isLoading && styles.disabledButton]}
           onPress={handleLogin}
           disabled={isLoading}
         >
-          <Text style={[styles.loginButtonText, isLoading && styles.disabledButtonText]}>
-            {isLoading ? 'Iniciando sesión...' : 'Iniciar sesión'}
+          <Text
+            style={[
+              styles.loginButtonText,
+              isLoading && styles.disabledButtonText,
+            ]}
+          >
+            {isLoading ? "Iniciando sesión..." : "Iniciar sesión"}
           </Text>
         </TouchableOpacity>
-        
+
         <View style={styles.signupContainer}>
           <Text style={styles.signupPrompt}>¿No tienes una cuenta? </Text>
-          <TouchableOpacity 
-            onPress={() => navigation.navigate('CrearCuenta')}
+          <TouchableOpacity
+            onPress={() => navigation.navigate("CrearCuenta")}
             disabled={isLoading}
           >
             <Text style={[styles.signupLink, isLoading && styles.disabledText]}>
@@ -215,9 +233,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   statusBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: Theme.spacing.lg,
     paddingTop: Theme.spacing.md,
   },
@@ -227,12 +245,12 @@ const styles = StyleSheet.create({
     fontWeight: Theme.fontWeight.semibold,
   },
   statusIcons: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: Theme.spacing.xs,
   },
   signalBars: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 2,
   },
   signalBar: {
@@ -254,8 +272,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.textPrimary,
     borderRadius: 2,
     marginLeft: 4,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   batteryLevel: {
     width: 16,
@@ -264,8 +282,8 @@ const styles = StyleSheet.create({
     borderRadius: 1,
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     paddingHorizontal: Theme.spacing.lg,
     paddingVertical: Theme.spacing.md,
   },
@@ -314,8 +332,8 @@ const styles = StyleSheet.create({
     borderColor: Colors.error,
   },
   passwordContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     borderWidth: 1,
     borderColor: Colors.gray300,
     borderRadius: Theme.borderRadius.lg,
@@ -336,14 +354,14 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   forgotPasswordContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     paddingTop: Theme.spacing.md,
   },
   forgotPasswordText: {
     color: Colors.textPrimary,
     fontSize: Theme.fontSize.md,
     fontWeight: Theme.fontWeight.medium,
-    textDecorationLine: 'underline',
+    textDecorationLine: "underline",
   },
   disabledText: {
     opacity: 0.5,
@@ -357,7 +375,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     borderRadius: Theme.borderRadius.full,
     paddingVertical: Theme.spacing.lg,
-    alignItems: 'center',
+    alignItems: "center",
   },
   disabledButton: {
     opacity: 0.6,
@@ -371,9 +389,9 @@ const styles = StyleSheet.create({
     opacity: 0.8,
   },
   signupContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   signupPrompt: {
     color: Colors.textSecondary,
@@ -383,7 +401,7 @@ const styles = StyleSheet.create({
     color: Colors.textPrimary,
     fontSize: Theme.fontSize.md,
     fontWeight: Theme.fontWeight.semibold,
-    textDecorationLine: 'underline',
+    textDecorationLine: "underline",
   },
 });
 

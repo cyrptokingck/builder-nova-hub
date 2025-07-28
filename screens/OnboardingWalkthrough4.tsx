@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import {
   View,
   Text,
@@ -7,23 +7,26 @@ import {
   SafeAreaView,
   Animated,
   Dimensions,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { OnboardingWalkthrough4NavigationProp } from '../types/navigation';
-import { Colors, Theme } from '../constants/Colors';
-import { ArrowRight, Check } from 'lucide-react-native';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { OnboardingWalkthrough4NavigationProp } from "../types/navigation";
+import { Colors, Theme } from "../constants/Colors";
+import { ArrowRight, Check } from "lucide-react-native";
 
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 const OnboardingWalkthrough4: React.FC = () => {
   const navigation = useNavigation<OnboardingWalkthrough4NavigationProp>();
-  
+
   // Animation values for floating coins
   const bounceAnim1 = new Animated.Value(0);
   const bounceAnim2 = new Animated.Value(0);
 
   useEffect(() => {
-    const createBounceAnimation = (animValue: Animated.Value, delay: number): Animated.CompositeAnimation => {
+    const createBounceAnimation = (
+      animValue: Animated.Value,
+      delay: number,
+    ): Animated.CompositeAnimation => {
       return Animated.loop(
         Animated.sequence([
           Animated.timing(animValue, {
@@ -37,7 +40,7 @@ const OnboardingWalkthrough4: React.FC = () => {
             duration: 1000,
             useNativeDriver: true,
           }),
-        ])
+        ]),
       );
     };
 
@@ -66,7 +69,7 @@ const OnboardingWalkthrough4: React.FC = () => {
 
       {/* Skip Button */}
       <View style={styles.skipContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Landing')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Landing")}>
           <Text style={styles.skipText}>Skip</Text>
         </TouchableOpacity>
       </View>
@@ -74,33 +77,33 @@ const OnboardingWalkthrough4: React.FC = () => {
       {/* Main Content */}
       <View style={styles.content}>
         <View style={styles.textContainer}>
-          <Text style={styles.title}>
-            Código abierto, premios garantizados
-          </Text>
+          <Text style={styles.title}>Código abierto, premios garantizados</Text>
           <Text style={styles.description}>
-            Usamos contratos inteligentes auditados, reglas claras y probabilidades públicas. Todo está verificado y nadie puede manipularlo.
+            Usamos contratos inteligentes auditados, reglas claras y
+            probabilidades públicas. Todo está verificado y nadie puede
+            manipularlo.
           </Text>
         </View>
 
         {/* 3D Illustration - Security/Verification theme */}
         <View style={styles.illustrationContainer}>
           {/* Floating coins */}
-          <Animated.View 
+          <Animated.View
             style={[
               styles.coin,
               styles.coin1,
-              { transform: [{ translateY: bounceAnim1 }] }
+              { transform: [{ translateY: bounceAnim1 }] },
             ]}
           >
             <View style={styles.coinInner} />
             <Text style={styles.coinDollar}>$</Text>
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.coin,
               styles.coin2,
-              { transform: [{ translateY: bounceAnim2 }] }
+              { transform: [{ translateY: bounceAnim2 }] },
             ]}
           >
             <View style={styles.coinInner} />
@@ -162,9 +165,9 @@ const OnboardingWalkthrough4: React.FC = () => {
 
         {/* Next Button */}
         <View style={styles.nextButtonContainer}>
-          <TouchableOpacity 
+          <TouchableOpacity
             style={styles.nextButton}
-            onPress={() => navigation.navigate('OnboardingWalkthrough5')}
+            onPress={() => navigation.navigate("OnboardingWalkthrough5")}
           >
             <ArrowRight size={24} color={Colors.primary} />
           </TouchableOpacity>
@@ -185,9 +188,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   statusBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: Theme.spacing.lg,
     paddingTop: Theme.spacing.md,
   },
@@ -197,12 +200,12 @@ const styles = StyleSheet.create({
     fontWeight: Theme.fontWeight.semibold,
   },
   statusIcons: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: Theme.spacing.xs,
   },
   signalBars: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 2,
   },
   signalBar: {
@@ -224,8 +227,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.textPrimary,
     borderRadius: 2,
     marginLeft: 4,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   batteryLevel: {
     width: 16,
@@ -234,7 +237,7 @@ const styles = StyleSheet.create({
     borderRadius: 1,
   },
   skipContainer: {
-    alignItems: 'flex-end',
+    alignItems: "flex-end",
     paddingHorizontal: Theme.spacing.lg,
     paddingVertical: Theme.spacing.md,
   },
@@ -245,19 +248,19 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingHorizontal: Theme.spacing.lg,
   },
   textContainer: {
     marginBottom: 40,
-    alignItems: 'center',
+    alignItems: "center",
   },
   title: {
     fontSize: Theme.fontSize.xxxl,
     fontWeight: Theme.fontWeight.bold,
     color: Colors.textPrimary,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: Theme.spacing.md,
     maxWidth: width * 0.8,
     lineHeight: 34,
@@ -265,23 +268,23 @@ const styles = StyleSheet.create({
   description: {
     fontSize: Theme.fontSize.md,
     color: Colors.textSecondary,
-    textAlign: 'center',
+    textAlign: "center",
     maxWidth: width * 0.85,
     lineHeight: 22,
   },
   illustrationContainer: {
     width: 280,
     height: 280,
-    position: 'relative',
-    justifyContent: 'center',
-    alignItems: 'center',
+    position: "relative",
+    justifyContent: "center",
+    alignItems: "center",
   },
   coin: {
-    position: 'absolute',
+    position: "absolute",
     backgroundColor: Colors.coinGold,
     borderRadius: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     ...Theme.shadows.medium,
   },
   coin1: {
@@ -297,7 +300,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   coinInner: {
-    position: 'absolute',
+    position: "absolute",
     top: 4,
     left: 4,
     right: 4,
@@ -311,32 +314,32 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
   securityShield: {
-    position: 'absolute',
+    position: "absolute",
     top: 48,
     left: 16,
     width: 64,
     height: 80,
-    backgroundColor: '#3B82F6',
+    backgroundColor: "#3B82F6",
     borderTopLeftRadius: 32,
     borderTopRightRadius: 32,
     borderBottomLeftRadius: Theme.borderRadius.lg,
     borderBottomRightRadius: Theme.borderRadius.lg,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     ...Theme.shadows.large,
   },
   shieldCheckmark: {
-    position: 'absolute',
+    position: "absolute",
     top: 12,
     width: 32,
     height: 32,
     backgroundColor: Colors.white,
     borderRadius: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   shieldCoin1: {
-    position: 'absolute',
+    position: "absolute",
     top: 48,
     left: 4,
     width: 16,
@@ -345,7 +348,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   shieldCoin2: {
-    position: 'absolute',
+    position: "absolute",
     top: 56,
     right: 4,
     width: 12,
@@ -354,7 +357,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   document: {
-    position: 'absolute',
+    position: "absolute",
     top: 32,
     right: 16,
     width: 48,
@@ -367,35 +370,35 @@ const styles = StyleSheet.create({
     ...Theme.shadows.medium,
   },
   documentHeader: {
-    width: '100%',
+    width: "100%",
     height: 4,
-    backgroundColor: '#FB923C',
+    backgroundColor: "#FB923C",
     borderRadius: 2,
     marginBottom: Theme.spacing.xs,
   },
   documentLine1: {
-    width: '100%',
+    width: "100%",
     height: 2,
     backgroundColor: Colors.gray300,
     borderRadius: 1,
     marginBottom: 2,
   },
   documentLine2: {
-    width: '100%',
+    width: "100%",
     height: 2,
     backgroundColor: Colors.gray300,
     borderRadius: 1,
     marginBottom: 2,
   },
   documentLine3: {
-    width: '100%',
+    width: "100%",
     height: 2,
     backgroundColor: Colors.gray300,
     borderRadius: 1,
     marginBottom: Theme.spacing.xs,
   },
   documentSignature: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 8,
     right: 4,
     width: 12,
@@ -404,17 +407,17 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   lockContainer: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 64,
-    left: '50%',
+    left: "50%",
     marginLeft: -40,
-    alignItems: 'center',
+    alignItems: "center",
   },
   lockShackle: {
     width: 48,
     height: 48,
     borderWidth: 16,
-    borderColor: '#7C3AED',
+    borderColor: "#7C3AED",
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     borderBottomWidth: 0,
@@ -423,38 +426,38 @@ const styles = StyleSheet.create({
   lockBody: {
     width: 80,
     height: 64,
-    backgroundColor: '#7C3AED',
+    backgroundColor: "#7C3AED",
     borderRadius: Theme.borderRadius.lg,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     ...Theme.shadows.large,
   },
   keyhole: {
     width: 16,
     height: 16,
-    backgroundColor: '#5B21B6',
+    backgroundColor: "#5B21B6",
     borderRadius: 8,
     marginBottom: 4,
   },
   keyholeSlot: {
     width: 8,
     height: 16,
-    backgroundColor: '#5B21B6',
+    backgroundColor: "#5B21B6",
   },
   lockCoin: {
-    position: 'absolute',
+    position: "absolute",
     top: -12,
     right: -8,
     width: 32,
     height: 32,
     backgroundColor: Colors.coinGold,
     borderRadius: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     ...Theme.shadows.medium,
   },
   lockCoinInner: {
-    position: 'absolute',
+    position: "absolute",
     top: 4,
     left: 4,
     right: 4,
@@ -468,7 +471,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
   floatingElement1: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 32,
     left: 32,
     width: 24,
@@ -478,7 +481,7 @@ const styles = StyleSheet.create({
     ...Theme.shadows.small,
   },
   floatingElement2: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 16,
     right: 32,
     width: 32,
@@ -492,8 +495,8 @@ const styles = StyleSheet.create({
     paddingBottom: Theme.spacing.xl,
   },
   progressDots: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
     gap: Theme.spacing.sm,
     marginBottom: Theme.spacing.lg,
   },
@@ -501,25 +504,25 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    backgroundColor: "rgba(0, 0, 0, 0.4)",
   },
   dotActive: {
     width: 24,
     backgroundColor: Colors.textPrimary,
   },
   nextButtonContainer: {
-    alignItems: 'flex-end',
+    alignItems: "flex-end",
   },
   nextButton: {
     width: 56,
     height: 56,
     backgroundColor: Colors.buttonDark,
     borderRadius: 28,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   progressIndicator: {
-    alignItems: 'center',
+    alignItems: "center",
     paddingTop: Theme.spacing.md,
   },
   progressBar: {

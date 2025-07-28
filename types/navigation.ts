@@ -1,5 +1,5 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RouteProp } from '@react-navigation/native';
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RouteProp } from "@react-navigation/native";
 
 // Root Stack Parameter List
 export type RootStackParamList = {
@@ -13,7 +13,7 @@ export type RootStackParamList = {
   IniciarSesion: undefined;
   Comencemos: undefined;
   Dashboard: undefined;
-  ComprarTickets: { 
+  ComprarTickets: {
     sorteoId?: string;
     precioAcumulado?: number;
   };
@@ -34,65 +34,74 @@ export type RootStackParamList = {
 // Navigation Props for each screen
 export type OnboardingWalkthrough1NavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'OnboardingWalkthrough1'
+  "OnboardingWalkthrough1"
 >;
 
 export type OnboardingWalkthrough2NavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'OnboardingWalkthrough2'
+  "OnboardingWalkthrough2"
 >;
 
 export type OnboardingWalkthrough3NavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'OnboardingWalkthrough3'
+  "OnboardingWalkthrough3"
 >;
 
 export type OnboardingWalkthrough4NavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'OnboardingWalkthrough4'
+  "OnboardingWalkthrough4"
 >;
 
 export type OnboardingWalkthrough5NavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'OnboardingWalkthrough5'
+  "OnboardingWalkthrough5"
 >;
 
 export type LandingScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'Landing'
+  "Landing"
 >;
 
 export type CrearCuentaScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'CrearCuenta'
+  "CrearCuenta"
 >;
 
 export type IniciarSesionScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'IniciarSesion'
+  "IniciarSesion"
 >;
 
 export type DashboardScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'Dashboard'
+  "Dashboard"
 >;
 
 export type ComprarTicketsScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'ComprarTickets'
+  "ComprarTickets"
 >;
 
 export type MiSaldoScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'MiSaldo'
+  "MiSaldo"
 >;
 
 export type MiPerfilScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  'MiPerfil'
+  "MiPerfil"
 >;
 
 // Route Props
-export type ComprarTicketsRouteProp = RouteProp<RootStackParamList, 'ComprarTickets'>;
-export type SeleccionarNumerosRouteProp = RouteProp<RootStackParamList, 'SeleccionarNumeros'>;
-export type ConfirmarCompraRouteProp = RouteProp<RootStackParamList, 'ConfirmarCompra'>;
+export type ComprarTicketsRouteProp = RouteProp<
+  RootStackParamList,
+  "ComprarTickets"
+>;
+export type SeleccionarNumerosRouteProp = RouteProp<
+  RootStackParamList,
+  "SeleccionarNumeros"
+>;
+export type ConfirmarCompraRouteProp = RouteProp<
+  RootStackParamList,
+  "ConfirmarCompra"
+>;

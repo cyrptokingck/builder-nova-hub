@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -8,11 +8,11 @@ import {
   SafeAreaView,
   ScrollView,
   Alert,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { CrearCuentaScreenNavigationProp } from '../types/navigation';
-import { Colors, Theme } from '../constants/Colors';
-import { ArrowLeft, Eye, EyeOff } from 'lucide-react-native';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { CrearCuentaScreenNavigationProp } from "../types/navigation";
+import { Colors, Theme } from "../constants/Colors";
+import { ArrowLeft, Eye, EyeOff } from "lucide-react-native";
 
 interface FormData {
   nombre: string;
@@ -34,49 +34,50 @@ interface FormErrors {
 
 const CrearCuentaScreen: React.FC = () => {
   const navigation = useNavigation<CrearCuentaScreenNavigationProp>();
-  
+
   const [formData, setFormData] = useState<FormData>({
-    nombre: '',
-    apellidos: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    nombre: "",
+    apellidos: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
     acceptTerms: false,
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false);
+  const [showConfirmPassword, setShowConfirmPassword] =
+    useState<boolean>(false);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
     if (!formData.nombre.trim()) {
-      newErrors.nombre = 'El nombre es requerido';
+      newErrors.nombre = "El nombre es requerido";
     }
 
     if (!formData.apellidos.trim()) {
-      newErrors.apellidos = 'Los apellidos son requeridos';
+      newErrors.apellidos = "Los apellidos son requeridos";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'El email es requerido';
+      newErrors.email = "El email es requerido";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email inválido';
+      newErrors.email = "Email inválido";
     }
 
     if (!formData.password) {
-      newErrors.password = 'La contraseña es requerida';
+      newErrors.password = "La contraseña es requerida";
     } else if (formData.password.length < 8) {
-      newErrors.password = 'Mínimo 8 caracteres';
+      newErrors.password = "Mínimo 8 caracteres";
     }
 
     if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = 'Las contraseñas no coinciden';
+      newErrors.confirmPassword = "Las contraseñas no coinciden";
     }
 
     if (!formData.acceptTerms) {
-      newErrors.terms = 'Debes aceptar los términos';
+      newErrors.terms = "Debes aceptar los términos";
     }
 
     setErrors(newErrors);
@@ -86,16 +87,12 @@ const CrearCuentaScreen: React.FC = () => {
   const handleSubmit = (): void => {
     if (validateForm()) {
       // Here you would typically make an API call
-      Alert.alert(
-        'Cuenta creada',
-        'Tu cuenta ha sido creada exitosamente',
-        [
-          {
-            text: 'Continuar',
-            onPress: () => navigation.navigate('Comencemos'),
-          },
-        ]
-      );
+      Alert.alert("Cuenta creada", "Tu cuenta ha sido creada exitosamente", [
+        {
+          text: "Continuar",
+          onPress: () => navigation.navigate("Comencemos"),
+        },
+      ]);
     }
   };
 
@@ -120,7 +117,7 @@ const CrearCuentaScreen: React.FC = () => {
 
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
@@ -132,7 +129,8 @@ const CrearCuentaScreen: React.FC = () => {
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Crear cuenta</Text>
           <Text style={styles.subtitle}>
-            Por favor introduce todos los datos que solicitamos para crear tu cuenta.
+            Por favor introduce todos los datos que solicitamos para crear tu
+            cuenta.
           </Text>
         </View>
 
@@ -144,10 +142,14 @@ const CrearCuentaScreen: React.FC = () => {
               style={[styles.input, errors.nombre && styles.inputError]}
               placeholder="Manuel"
               value={formData.nombre}
-              onChangeText={(text) => setFormData({ ...formData, nombre: text })}
+              onChangeText={(text) =>
+                setFormData({ ...formData, nombre: text })
+              }
               autoCapitalize="words"
             />
-            {errors.nombre && <Text style={styles.errorText}>{errors.nombre}</Text>}
+            {errors.nombre && (
+              <Text style={styles.errorText}>{errors.nombre}</Text>
+            )}
           </View>
 
           {/* Apellidos Field */}
@@ -157,10 +159,14 @@ const CrearCuentaScreen: React.FC = () => {
               style={[styles.input, errors.apellidos && styles.inputError]}
               placeholder="Campos P"
               value={formData.apellidos}
-              onChangeText={(text) => setFormData({ ...formData, apellidos: text })}
+              onChangeText={(text) =>
+                setFormData({ ...formData, apellidos: text })
+              }
               autoCapitalize="words"
             />
-            {errors.apellidos && <Text style={styles.errorText}>{errors.apellidos}</Text>}
+            {errors.apellidos && (
+              <Text style={styles.errorText}>{errors.apellidos}</Text>
+            )}
           </View>
 
           {/* Email Field */}
@@ -175,7 +181,9 @@ const CrearCuentaScreen: React.FC = () => {
               autoCapitalize="none"
               autoCorrect={false}
             />
-            {errors.email && <Text style={styles.errorText}>{errors.email}</Text>}
+            {errors.email && (
+              <Text style={styles.errorText}>{errors.email}</Text>
+            )}
           </View>
 
           {/* Password Field */}
@@ -183,10 +191,15 @@ const CrearCuentaScreen: React.FC = () => {
             <Text style={styles.label}>Contraseña</Text>
             <View style={styles.passwordContainer}>
               <TextInput
-                style={[styles.passwordInput, errors.password && styles.inputError]}
+                style={[
+                  styles.passwordInput,
+                  errors.password && styles.inputError,
+                ]}
                 placeholder="••••••••••"
                 value={formData.password}
-                onChangeText={(text) => setFormData({ ...formData, password: text })}
+                onChangeText={(text) =>
+                  setFormData({ ...formData, password: text })
+                }
                 secureTextEntry={!showPassword}
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -202,7 +215,9 @@ const CrearCuentaScreen: React.FC = () => {
                 )}
               </TouchableOpacity>
             </View>
-            {errors.password && <Text style={styles.errorText}>{errors.password}</Text>}
+            {errors.password && (
+              <Text style={styles.errorText}>{errors.password}</Text>
+            )}
           </View>
 
           {/* Confirm Password Field */}
@@ -210,10 +225,15 @@ const CrearCuentaScreen: React.FC = () => {
             <Text style={styles.label}>Confirmar contraseña</Text>
             <View style={styles.passwordContainer}>
               <TextInput
-                style={[styles.passwordInput, errors.confirmPassword && styles.inputError]}
+                style={[
+                  styles.passwordInput,
+                  errors.confirmPassword && styles.inputError,
+                ]}
                 placeholder="••••••••••"
                 value={formData.confirmPassword}
-                onChangeText={(text) => setFormData({ ...formData, confirmPassword: text })}
+                onChangeText={(text) =>
+                  setFormData({ ...formData, confirmPassword: text })
+                }
                 secureTextEntry={!showConfirmPassword}
                 autoCapitalize="none"
                 autoCorrect={false}
@@ -229,22 +249,33 @@ const CrearCuentaScreen: React.FC = () => {
                 )}
               </TouchableOpacity>
             </View>
-            {errors.confirmPassword && <Text style={styles.errorText}>{errors.confirmPassword}</Text>}
+            {errors.confirmPassword && (
+              <Text style={styles.errorText}>{errors.confirmPassword}</Text>
+            )}
           </View>
 
           {/* Terms and Conditions */}
           <View style={styles.termsContainer}>
             <TouchableOpacity
               style={styles.checkbox}
-              onPress={() => setFormData({ ...formData, acceptTerms: !formData.acceptTerms })}
+              onPress={() =>
+                setFormData({ ...formData, acceptTerms: !formData.acceptTerms })
+              }
             >
-              <View style={[styles.checkboxInner, formData.acceptTerms && styles.checkboxChecked]}>
-                {formData.acceptTerms && <Text style={styles.checkmark}>✓</Text>}
+              <View
+                style={[
+                  styles.checkboxInner,
+                  formData.acceptTerms && styles.checkboxChecked,
+                ]}
+              >
+                {formData.acceptTerms && (
+                  <Text style={styles.checkmark}>✓</Text>
+                )}
               </View>
             </TouchableOpacity>
             <Text style={styles.termsText}>
-              He leído y acepto los{' '}
-              <Text style={styles.termsLink}>Términos y Condiciones</Text> y la{' '}
+              He leído y acepto los{" "}
+              <Text style={styles.termsLink}>Términos y Condiciones</Text> y la{" "}
               <Text style={styles.termsLink}>Política de Privacidad</Text>
             </Text>
           </View>
@@ -268,9 +299,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   statusBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: Theme.spacing.lg,
     paddingTop: Theme.spacing.md,
   },
@@ -280,12 +311,12 @@ const styles = StyleSheet.create({
     fontWeight: Theme.fontWeight.semibold,
   },
   statusIcons: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: Theme.spacing.xs,
   },
   signalBars: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 2,
   },
   signalBar: {
@@ -307,8 +338,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.textPrimary,
     borderRadius: 2,
     marginLeft: 4,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   batteryLevel: {
     width: 16,
@@ -317,8 +348,8 @@ const styles = StyleSheet.create({
     borderRadius: 1,
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     paddingHorizontal: Theme.spacing.lg,
     paddingVertical: Theme.spacing.md,
   },
@@ -367,8 +398,8 @@ const styles = StyleSheet.create({
     borderColor: Colors.error,
   },
   passwordContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     borderWidth: 1,
     borderColor: Colors.gray300,
     borderRadius: Theme.borderRadius.lg,
@@ -384,8 +415,8 @@ const styles = StyleSheet.create({
     padding: Theme.spacing.sm,
   },
   termsContainer: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
+    flexDirection: "row",
+    alignItems: "flex-start",
     gap: Theme.spacing.sm,
     paddingTop: Theme.spacing.md,
   },
@@ -398,8 +429,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: Colors.gray300,
     borderRadius: 4,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   checkboxChecked: {
     backgroundColor: Colors.primary,
@@ -419,7 +450,7 @@ const styles = StyleSheet.create({
   termsLink: {
     color: Colors.textPrimary,
     fontWeight: Theme.fontWeight.medium,
-    textDecorationLine: 'underline',
+    textDecorationLine: "underline",
   },
   errorText: {
     fontSize: Theme.fontSize.xs,
@@ -434,7 +465,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     borderRadius: Theme.borderRadius.full,
     paddingVertical: Theme.spacing.lg,
-    alignItems: 'center',
+    alignItems: "center",
   },
   submitButtonText: {
     color: Colors.textPrimary,

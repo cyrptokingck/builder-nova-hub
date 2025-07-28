@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import {
   View,
   Text,
@@ -7,17 +7,17 @@ import {
   SafeAreaView,
   Animated,
   Dimensions,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { OnboardingWalkthrough5NavigationProp } from '../types/navigation';
-import { Colors, Theme } from '../constants/Colors';
-import { ArrowRight } from 'lucide-react-native';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { OnboardingWalkthrough5NavigationProp } from "../types/navigation";
+import { Colors, Theme } from "../constants/Colors";
+import { ArrowRight } from "lucide-react-native";
 
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 const OnboardingWalkthrough5: React.FC = () => {
   const navigation = useNavigation<OnboardingWalkthrough5NavigationProp>();
-  
+
   // Animation values for floating coins
   const bounceAnim1 = new Animated.Value(0);
   const bounceAnim2 = new Animated.Value(0);
@@ -30,7 +30,10 @@ const OnboardingWalkthrough5: React.FC = () => {
   const fallAnim4 = new Animated.Value(0);
 
   useEffect(() => {
-    const createBounceAnimation = (animValue: Animated.Value, delay: number): Animated.CompositeAnimation => {
+    const createBounceAnimation = (
+      animValue: Animated.Value,
+      delay: number,
+    ): Animated.CompositeAnimation => {
       return Animated.loop(
         Animated.sequence([
           Animated.timing(animValue, {
@@ -44,11 +47,14 @@ const OnboardingWalkthrough5: React.FC = () => {
             duration: 1000,
             useNativeDriver: true,
           }),
-        ])
+        ]),
       );
     };
 
-    const createFallAnimation = (animValue: Animated.Value, delay: number): Animated.CompositeAnimation => {
+    const createFallAnimation = (
+      animValue: Animated.Value,
+      delay: number,
+    ): Animated.CompositeAnimation => {
       return Animated.loop(
         Animated.sequence([
           Animated.timing(animValue, {
@@ -62,7 +68,7 @@ const OnboardingWalkthrough5: React.FC = () => {
             duration: 1200,
             useNativeDriver: true,
           }),
-        ])
+        ]),
       );
     };
 
@@ -70,7 +76,7 @@ const OnboardingWalkthrough5: React.FC = () => {
     createBounceAnimation(bounceAnim2, 300).start();
     createBounceAnimation(bounceAnim3, 600).start();
     createBounceAnimation(bounceAnim4, 900).start();
-    
+
     createFallAnimation(fallAnim1, 1200).start();
     createFallAnimation(fallAnim2, 1500).start();
     createFallAnimation(fallAnim3, 1800).start();
@@ -98,7 +104,7 @@ const OnboardingWalkthrough5: React.FC = () => {
 
       {/* Skip Button */}
       <View style={styles.skipContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Landing')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Landing")}>
           <Text style={styles.skipText}>Skip</Text>
         </TouchableOpacity>
       </View>
@@ -110,49 +116,50 @@ const OnboardingWalkthrough5: React.FC = () => {
             Jugar también es construir oportunidades
           </Text>
           <Text style={styles.description}>
-            LottoCoin es una comunidad. Cada sorteo impulsa inclusión financiera, igualdad de oportunidades y diversión transparente.
+            LottoCoin es una comunidad. Cada sorteo impulsa inclusión
+            financiera, igualdad de oportunidades y diversión transparente.
           </Text>
         </View>
 
         {/* 3D Illustration - Community building theme */}
         <View style={styles.illustrationContainer}>
           {/* Floating coins */}
-          <Animated.View 
+          <Animated.View
             style={[
               styles.coin,
               styles.coin1,
-              { transform: [{ translateY: bounceAnim1 }] }
+              { transform: [{ translateY: bounceAnim1 }] },
             ]}
           >
             <View style={styles.coinInner} />
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.coin,
               styles.coin2,
-              { transform: [{ translateY: bounceAnim2 }] }
+              { transform: [{ translateY: bounceAnim2 }] },
             ]}
           >
             <View style={styles.coinInner} />
             <Text style={styles.coinDollar}>$</Text>
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.coin,
               styles.coin3,
-              { transform: [{ translateY: bounceAnim3 }] }
+              { transform: [{ translateY: bounceAnim3 }] },
             ]}
           >
             <View style={styles.coinInner} />
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.coin,
               styles.coin4,
-              { transform: [{ translateY: bounceAnim4 }] }
+              { transform: [{ translateY: bounceAnim4 }] },
             ]}
           >
             <View style={styles.coinInner} />
@@ -175,7 +182,7 @@ const OnboardingWalkthrough5: React.FC = () => {
                 <View style={styles.headphonesRight} />
               </View>
             </View>
-            
+
             {/* Body */}
             <View style={styles.body}>
               {/* Arms raised in celebration */}
@@ -185,7 +192,7 @@ const OnboardingWalkthrough5: React.FC = () => {
               <View style={styles.handLeft} />
               <View style={styles.handRight} />
             </View>
-            
+
             {/* Legs */}
             <View style={styles.legsContainer}>
               <View style={styles.legLeft} />
@@ -197,41 +204,41 @@ const OnboardingWalkthrough5: React.FC = () => {
           </View>
 
           {/* Celebration coins falling from hands */}
-          <Animated.View 
+          <Animated.View
             style={[
               styles.celebrationCoin,
               styles.celebrationCoin1,
-              { transform: [{ translateY: fallAnim1 }] }
+              { transform: [{ translateY: fallAnim1 }] },
             ]}
           >
             <View style={styles.coinInner} />
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.celebrationCoin,
               styles.celebrationCoin2,
-              { transform: [{ translateY: fallAnim2 }] }
+              { transform: [{ translateY: fallAnim2 }] },
             ]}
           >
             <View style={styles.coinInner} />
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.celebrationCoin,
               styles.celebrationCoin3,
-              { transform: [{ translateY: fallAnim3 }] }
+              { transform: [{ translateY: fallAnim3 }] },
             ]}
           >
             <View style={styles.coinInner} />
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.celebrationCoin,
               styles.celebrationCoin4,
-              { transform: [{ translateY: fallAnim4 }] }
+              { transform: [{ translateY: fallAnim4 }] },
             ]}
           >
             <View style={styles.coinInner} />
@@ -252,9 +259,9 @@ const OnboardingWalkthrough5: React.FC = () => {
 
         {/* Next Button */}
         <View style={styles.nextButtonContainer}>
-          <TouchableOpacity 
+          <TouchableOpacity
             style={styles.nextButton}
-            onPress={() => navigation.navigate('Landing')}
+            onPress={() => navigation.navigate("Landing")}
           >
             <ArrowRight size={24} color={Colors.primary} />
           </TouchableOpacity>
@@ -275,9 +282,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   statusBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: Theme.spacing.lg,
     paddingTop: Theme.spacing.md,
   },
@@ -287,12 +294,12 @@ const styles = StyleSheet.create({
     fontWeight: Theme.fontWeight.semibold,
   },
   statusIcons: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: Theme.spacing.xs,
   },
   signalBars: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 2,
   },
   signalBar: {
@@ -314,8 +321,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.textPrimary,
     borderRadius: 2,
     marginLeft: 4,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   batteryLevel: {
     width: 16,
@@ -324,7 +331,7 @@ const styles = StyleSheet.create({
     borderRadius: 1,
   },
   skipContainer: {
-    alignItems: 'flex-end',
+    alignItems: "flex-end",
     paddingHorizontal: Theme.spacing.lg,
     paddingVertical: Theme.spacing.md,
   },
@@ -335,19 +342,19 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingHorizontal: Theme.spacing.lg,
   },
   textContainer: {
     marginBottom: 40,
-    alignItems: 'center',
+    alignItems: "center",
   },
   title: {
     fontSize: Theme.fontSize.xxxl,
     fontWeight: Theme.fontWeight.bold,
     color: Colors.textPrimary,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: Theme.spacing.md,
     maxWidth: width * 0.8,
     lineHeight: 34,
@@ -355,23 +362,23 @@ const styles = StyleSheet.create({
   description: {
     fontSize: Theme.fontSize.md,
     color: Colors.textSecondary,
-    textAlign: 'center',
+    textAlign: "center",
     maxWidth: width * 0.85,
     lineHeight: 22,
   },
   illustrationContainer: {
     width: 280,
     height: 280,
-    position: 'relative',
-    justifyContent: 'center',
-    alignItems: 'center',
+    position: "relative",
+    justifyContent: "center",
+    alignItems: "center",
   },
   coin: {
-    position: 'absolute',
+    position: "absolute",
     backgroundColor: Colors.coinGold,
     borderRadius: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     ...Theme.shadows.medium,
   },
   coin1: {
@@ -399,7 +406,7 @@ const styles = StyleSheet.create({
     height: 36,
   },
   coinInner: {
-    position: 'absolute',
+    position: "absolute",
     top: 4,
     left: 4,
     right: 4,
@@ -413,19 +420,19 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
   characterContainer: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   head: {
     width: 64,
     height: 64,
-    backgroundColor: '#FDBA74',
+    backgroundColor: "#FDBA74",
     borderRadius: 32,
-    position: 'relative',
+    position: "relative",
     marginBottom: 8,
     ...Theme.shadows.medium,
   },
   eye1: {
-    position: 'absolute',
+    position: "absolute",
     top: 20,
     left: 12,
     width: 8,
@@ -434,7 +441,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   eye2: {
-    position: 'absolute',
+    position: "absolute",
     top: 20,
     right: 12,
     width: 8,
@@ -443,148 +450,148 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   bigSmile: {
-    position: 'absolute',
+    position: "absolute",
     top: 28,
-    left: '50%',
+    left: "50%",
     marginLeft: -12,
     width: 24,
     height: 12,
     borderWidth: 2,
     borderColor: Colors.textPrimary,
-    borderTopColor: 'transparent',
+    borderTopColor: "transparent",
     borderRadius: 12,
   },
   headphones: {
-    position: 'absolute',
+    position: "absolute",
     top: -8,
-    left: '50%',
+    left: "50%",
     marginLeft: -36,
     width: 72,
     height: 16,
   },
   headphonesBand: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     height: 16,
     borderWidth: 4,
-    borderColor: '#3B82F6',
+    borderColor: "#3B82F6",
     borderRadius: 50,
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
   },
   headphonesLeft: {
-    position: 'absolute',
+    position: "absolute",
     top: 4,
     left: 4,
     width: 16,
     height: 16,
-    backgroundColor: '#1E40AF',
+    backgroundColor: "#1E40AF",
     borderRadius: 8,
   },
   headphonesRight: {
-    position: 'absolute',
+    position: "absolute",
     top: 4,
     right: 4,
     width: 16,
     height: 16,
-    backgroundColor: '#1E40AF',
+    backgroundColor: "#1E40AF",
     borderRadius: 8,
   },
   body: {
     width: 80,
     height: 64,
-    backgroundColor: '#FBBF24',
+    backgroundColor: "#FBBF24",
     borderRadius: Theme.borderRadius.lg,
     marginBottom: 8,
-    position: 'relative',
+    position: "relative",
     ...Theme.shadows.medium,
   },
   armLeftCelebrating: {
-    position: 'absolute',
+    position: "absolute",
     top: -8,
     left: -24,
     width: 24,
     height: 56,
-    backgroundColor: '#FDBA74',
+    backgroundColor: "#FDBA74",
     borderRadius: 50,
-    transform: [{ rotate: '-45deg' }],
+    transform: [{ rotate: "-45deg" }],
   },
   armRightCelebrating: {
-    position: 'absolute',
+    position: "absolute",
     top: -8,
     right: -24,
     width: 24,
     height: 56,
-    backgroundColor: '#FDBA74',
+    backgroundColor: "#FDBA74",
     borderRadius: 50,
-    transform: [{ rotate: '45deg' }],
+    transform: [{ rotate: "45deg" }],
   },
   handLeft: {
-    position: 'absolute',
+    position: "absolute",
     top: -24,
     left: -32,
     width: 16,
     height: 16,
-    backgroundColor: '#FDBA74',
+    backgroundColor: "#FDBA74",
     borderRadius: 8,
   },
   handRight: {
-    position: 'absolute',
+    position: "absolute",
     top: -24,
     right: -32,
     width: 16,
     height: 16,
-    backgroundColor: '#FDBA74',
+    backgroundColor: "#FDBA74",
     borderRadius: 8,
   },
   legsContainer: {
-    position: 'relative',
+    position: "relative",
     width: 80,
     height: 64,
   },
   legLeft: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 8,
     width: 24,
     height: 64,
-    backgroundColor: '#3B82F6',
+    backgroundColor: "#3B82F6",
     borderRadius: Theme.borderRadius.lg,
   },
   legRight: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     right: 8,
     width: 24,
     height: 64,
-    backgroundColor: '#3B82F6',
+    backgroundColor: "#3B82F6",
     borderRadius: Theme.borderRadius.lg,
   },
   shoeLeft: {
-    position: 'absolute',
+    position: "absolute",
     bottom: -8,
     left: 0,
     width: 32,
     height: 16,
-    backgroundColor: '#EF4444',
+    backgroundColor: "#EF4444",
     borderRadius: 50,
   },
   shoeRight: {
-    position: 'absolute',
+    position: "absolute",
     bottom: -8,
     right: 0,
     width: 32,
     height: 16,
-    backgroundColor: '#EF4444',
+    backgroundColor: "#EF4444",
     borderRadius: 50,
   },
   celebrationCoin: {
-    position: 'absolute',
+    position: "absolute",
     backgroundColor: Colors.coinGold,
     borderRadius: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     ...Theme.shadows.small,
   },
   celebrationCoin1: {
@@ -616,8 +623,8 @@ const styles = StyleSheet.create({
     paddingBottom: Theme.spacing.xl,
   },
   progressDots: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
     gap: Theme.spacing.sm,
     marginBottom: Theme.spacing.lg,
   },
@@ -625,25 +632,25 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    backgroundColor: "rgba(0, 0, 0, 0.4)",
   },
   dotActive: {
     width: 24,
     backgroundColor: Colors.textPrimary,
   },
   nextButtonContainer: {
-    alignItems: 'flex-end',
+    alignItems: "flex-end",
   },
   nextButton: {
     width: 56,
     height: 56,
     backgroundColor: Colors.buttonDark,
     borderRadius: 28,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   progressIndicator: {
-    alignItems: 'center',
+    alignItems: "center",
     paddingTop: Theme.spacing.md,
   },
   progressBar: {

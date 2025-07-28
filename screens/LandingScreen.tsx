@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import {
   View,
   Text,
@@ -7,16 +7,16 @@ import {
   SafeAreaView,
   Animated,
   Dimensions,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { LandingScreenNavigationProp } from '../types/navigation';
-import { Colors, Theme } from '../constants/Colors';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { LandingScreenNavigationProp } from "../types/navigation";
+import { Colors, Theme } from "../constants/Colors";
 
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 const LandingScreen: React.FC = () => {
   const navigation = useNavigation<LandingScreenNavigationProp>();
-  
+
   // Animation values
   const pulseAnim = new Animated.Value(1);
   const coinBounce1 = new Animated.Value(0);
@@ -38,11 +38,14 @@ const LandingScreen: React.FC = () => {
           duration: 800,
           useNativeDriver: true,
         }),
-      ])
+      ]),
     );
 
     // Coin bounce animations with different delays
-    const createCoinBounce = (animValue: Animated.Value, delay: number): Animated.CompositeAnimation => {
+    const createCoinBounce = (
+      animValue: Animated.Value,
+      delay: number,
+    ): Animated.CompositeAnimation => {
       return Animated.loop(
         Animated.sequence([
           Animated.timing(animValue, {
@@ -56,7 +59,7 @@ const LandingScreen: React.FC = () => {
             duration: 1200,
             useNativeDriver: true,
           }),
-        ])
+        ]),
       );
     };
 
@@ -115,11 +118,8 @@ const LandingScreen: React.FC = () => {
           <View style={[styles.rocketFin, styles.rocketFinRight]} />
 
           {/* Fire/Exhaust */}
-          <Animated.View 
-            style={[
-              styles.rocketFire,
-              { transform: [{ scaleY: pulseAnim }] }
-            ]}
+          <Animated.View
+            style={[styles.rocketFire, { transform: [{ scaleY: pulseAnim }] }]}
           />
 
           {/* Clouds */}
@@ -128,44 +128,44 @@ const LandingScreen: React.FC = () => {
           <View style={[styles.cloud, styles.cloud3]} />
 
           {/* Floating Coins */}
-          <Animated.View 
+          <Animated.View
             style={[
               styles.floatingCoin,
               styles.coin1,
-              { transform: [{ translateY: coinBounce1 }] }
+              { transform: [{ translateY: coinBounce1 }] },
             ]}
           >
             <View style={styles.coinInner} />
             <Text style={styles.coinText}>$</Text>
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.floatingCoin,
               styles.coin2,
-              { transform: [{ translateY: coinBounce2 }] }
+              { transform: [{ translateY: coinBounce2 }] },
             ]}
           >
             <View style={styles.coinInner} />
             <Text style={styles.coinText}>$</Text>
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.floatingCoin,
               styles.coin3,
-              { transform: [{ translateY: coinBounce3 }] }
+              { transform: [{ translateY: coinBounce3 }] },
             ]}
           >
             <View style={styles.coinInner} />
             <Text style={styles.coinText}>$</Text>
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.floatingCoin,
               styles.coin4,
-              { transform: [{ translateY: coinBounce4 }] }
+              { transform: [{ translateY: coinBounce4 }] },
             ]}
           >
             <View style={styles.coinInner} />
@@ -175,16 +175,18 @@ const LandingScreen: React.FC = () => {
 
       {/* Bottom Section */}
       <View style={styles.bottomSection}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.createAccountButton}
-          onPress={() => navigation.navigate('CrearCuenta')}
+          onPress={() => navigation.navigate("CrearCuenta")}
         >
           <Text style={styles.createAccountText}>Crear cuenta</Text>
         </TouchableOpacity>
-        
+
         <View style={styles.loginContainer}>
           <Text style={styles.loginPrompt}>¿Tienes una cuenta? </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('IniciarSesion')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("IniciarSesion")}
+          >
             <Text style={styles.loginLink}>Inicia sesión</Text>
           </TouchableOpacity>
         </View>
@@ -204,9 +206,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   statusBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: Theme.spacing.lg,
     paddingTop: Theme.spacing.md,
   },
@@ -216,12 +218,12 @@ const styles = StyleSheet.create({
     fontWeight: Theme.fontWeight.semibold,
   },
   statusIcons: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: Theme.spacing.xs,
   },
   signalBars: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 2,
   },
   signalBar: {
@@ -243,8 +245,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.textPrimary,
     borderRadius: 2,
     marginLeft: 4,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   batteryLevel: {
     width: 16,
@@ -254,13 +256,13 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingHorizontal: Theme.spacing.lg,
   },
   titleContainer: {
     marginBottom: Theme.spacing.xl,
-    alignItems: 'center',
+    alignItems: "center",
   },
   title: {
     fontSize: Theme.fontSize.hero,
@@ -271,20 +273,20 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: Theme.fontSize.lg,
     color: Colors.textSecondary,
-    textAlign: 'center',
+    textAlign: "center",
     maxWidth: width * 0.8,
     lineHeight: 24,
   },
   rocketContainer: {
     width: 320,
     height: 320,
-    position: 'relative',
+    position: "relative",
     marginBottom: Theme.spacing.xl,
   },
   rocketBody: {
-    position: 'absolute',
+    position: "absolute",
     top: 32,
-    left: '50%',
+    left: "50%",
     marginLeft: -48,
     width: 96,
     height: 160,
@@ -296,9 +298,9 @@ const styles = StyleSheet.create({
     ...Theme.shadows.large,
   },
   rocketWindow: {
-    position: 'absolute',
+    position: "absolute",
     top: 24,
-    left: '50%',
+    left: "50%",
     marginLeft: -16,
     width: 32,
     height: 32,
@@ -308,23 +310,23 @@ const styles = StyleSheet.create({
     borderColor: Colors.rocketOrangeDark,
   },
   rocketStripe: {
-    position: 'absolute',
+    position: "absolute",
     left: 8,
     right: 8,
     height: 4,
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: "rgba(255, 255, 255, 0.2)",
     borderRadius: 2,
   },
   rocketFin: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 80,
     width: 0,
     height: 0,
     borderLeftWidth: 20,
     borderRightWidth: 20,
     borderBottomWidth: 30,
-    borderLeftColor: 'transparent',
-    borderRightColor: 'transparent',
+    borderLeftColor: "transparent",
+    borderRightColor: "transparent",
     borderBottomColor: Colors.rocketBlueDark,
   },
   rocketFinLeft: {
@@ -334,9 +336,9 @@ const styles = StyleSheet.create({
     right: 48,
   },
   rocketFire: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 32,
-    left: '50%',
+    left: "50%",
     marginLeft: -32,
     width: 64,
     height: 80,
@@ -346,21 +348,21 @@ const styles = StyleSheet.create({
     opacity: 0.9,
   },
   cloud: {
-    position: 'absolute',
+    position: "absolute",
     backgroundColor: Colors.white,
     borderRadius: 50,
     opacity: 0.8,
   },
   cloud1: {
     bottom: 0,
-    left: '50%',
+    left: "50%",
     marginLeft: -64,
     width: 128,
     height: 64,
   },
   cloud2: {
     bottom: 8,
-    left: '50%',
+    left: "50%",
     marginLeft: -32,
     width: 96,
     height: 48,
@@ -368,18 +370,18 @@ const styles = StyleSheet.create({
   },
   cloud3: {
     bottom: 8,
-    left: '50%',
+    left: "50%",
     marginLeft: -96,
     width: 80,
     height: 40,
     opacity: 0.6,
   },
   floatingCoin: {
-    position: 'absolute',
+    position: "absolute",
     backgroundColor: Colors.coinGold,
     borderRadius: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     ...Theme.shadows.medium,
   },
   coin1: {
@@ -407,7 +409,7 @@ const styles = StyleSheet.create({
     height: 24,
   },
   coinInner: {
-    position: 'absolute',
+    position: "absolute",
     top: 8,
     left: 8,
     right: 8,
@@ -425,11 +427,11 @@ const styles = StyleSheet.create({
     paddingBottom: Theme.spacing.xl,
   },
   createAccountButton: {
-    width: '100%',
+    width: "100%",
     backgroundColor: Colors.buttonDark,
     borderRadius: Theme.borderRadius.full,
     paddingVertical: Theme.spacing.lg,
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: Theme.spacing.md,
   },
   createAccountText: {
@@ -438,9 +440,9 @@ const styles = StyleSheet.create({
     fontWeight: Theme.fontWeight.semibold,
   },
   loginContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
     marginBottom: Theme.spacing.md,
   },
   loginPrompt: {
@@ -451,10 +453,10 @@ const styles = StyleSheet.create({
     color: Colors.textPrimary,
     fontSize: Theme.fontSize.md,
     fontWeight: Theme.fontWeight.semibold,
-    textDecorationLine: 'underline',
+    textDecorationLine: "underline",
   },
   progressIndicator: {
-    alignItems: 'center',
+    alignItems: "center",
     paddingTop: Theme.spacing.md,
   },
   progressBar: {

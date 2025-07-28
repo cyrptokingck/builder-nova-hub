@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   Text,
@@ -7,13 +7,13 @@ import {
   SafeAreaView,
   ScrollView,
   Dimensions,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { DashboardScreenNavigationProp } from '../types/navigation';
-import { Colors, Theme } from '../constants/Colors';
-import { Home, FileText, Wallet, Grid3X3 } from 'lucide-react-native';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { DashboardScreenNavigationProp } from "../types/navigation";
+import { Colors, Theme } from "../constants/Colors";
+import { Home, FileText, Wallet, Grid3X3 } from "lucide-react-native";
 
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 interface BoletosActivosProps {
   numbers: string[];
@@ -31,23 +31,23 @@ const DashboardScreen: React.FC = () => {
   const navigation = useNavigation<DashboardScreenNavigationProp>();
 
   const boletosActivos: BoletosActivosProps[] = [
-    { numbers: ['08', '23', '32', '36', '36'], date: 'Fri, 01 ago' },
-    { numbers: ['08', '23', '32', '36', '36'], date: 'Fri, 01 ago' },
-    { numbers: ['08', '23', '32', '36', '36'], date: 'Fri, 01 ago' },
+    { numbers: ["08", "23", "32", "36", "36"], date: "Fri, 01 ago" },
+    { numbers: ["08", "23", "32", "36", "36"], date: "Fri, 01 ago" },
+    { numbers: ["08", "23", "32", "36", "36"], date: "Fri, 01 ago" },
   ];
 
   const ultimosResultados: UltimosResultadosProps[] = [
     {
-      numbers: '08 23 32 36 36 66',
-      amount: '15 223 365',
-      currency: 'USDT',
-      date: 'Fri, 25 jun 2025',
+      numbers: "08 23 32 36 36 66",
+      amount: "15 223 365",
+      currency: "USDT",
+      date: "Fri, 25 jun 2025",
     },
     {
-      numbers: '32 54 60 25 78 95',
-      amount: '22',
-      currency: 'USDT',
-      date: 'Fri, 18 jun 2025',
+      numbers: "32 54 60 25 78 95",
+      amount: "22",
+      currency: "USDT",
+      date: "Fri, 18 jun 2025",
     },
   ];
 
@@ -91,9 +91,9 @@ const DashboardScreen: React.FC = () => {
         </View>
 
         {/* Buy Ticket Button */}
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.buyTicketButton}
-          onPress={() => navigation.navigate('ComprarTickets')}
+          onPress={() => navigation.navigate("ComprarTickets")}
         >
           <Text style={styles.buyTicketText}>Comprar boleto</Text>
         </TouchableOpacity>
@@ -156,27 +156,27 @@ const DashboardScreen: React.FC = () => {
           </View>
           <Text style={styles.navTextActive}>Home</Text>
         </TouchableOpacity>
-        
+
         <TouchableOpacity style={styles.navItem}>
           <View style={styles.navIcon}>
             <FileText size={24} color={Colors.white} />
           </View>
           <Text style={styles.navText}>Boletos</Text>
         </TouchableOpacity>
-        
-        <TouchableOpacity 
+
+        <TouchableOpacity
           style={styles.navItem}
-          onPress={() => navigation.navigate('MiSaldo')}
+          onPress={() => navigation.navigate("MiSaldo")}
         >
           <View style={styles.navIcon}>
             <Wallet size={24} color={Colors.white} />
           </View>
           <Text style={styles.navText}>Wallet</Text>
         </TouchableOpacity>
-        
-        <TouchableOpacity 
+
+        <TouchableOpacity
           style={styles.navItem}
-          onPress={() => navigation.navigate('MiPerfil')}
+          onPress={() => navigation.navigate("MiPerfil")}
         >
           <View style={styles.navIcon}>
             <Grid3X3 size={24} color={Colors.white} />
@@ -194,9 +194,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   statusBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: Theme.spacing.lg,
     paddingTop: Theme.spacing.md,
   },
@@ -206,12 +206,12 @@ const styles = StyleSheet.create({
     fontWeight: Theme.fontWeight.semibold,
   },
   statusIcons: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: Theme.spacing.xs,
   },
   signalBars: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 2,
   },
   signalBar: {
@@ -233,8 +233,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.textPrimary,
     borderRadius: 2,
     marginLeft: 4,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   batteryLevel: {
     width: 16,
@@ -247,14 +247,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: Theme.spacing.lg,
   },
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingVertical: Theme.spacing.md,
   },
   userInfo: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: Theme.spacing.sm,
   },
   avatar: {
@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
     fontWeight: Theme.fontWeight.semibold,
   },
   mainPrizeSection: {
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: Theme.spacing.lg,
   },
   prizeLabel: {
@@ -302,11 +302,11 @@ const styles = StyleSheet.create({
     color: Colors.error,
   },
   buyTicketButton: {
-    width: '100%',
+    width: "100%",
     backgroundColor: Colors.primary,
     borderRadius: Theme.borderRadius.full,
     paddingVertical: Theme.spacing.lg,
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: Theme.spacing.md,
   },
   buyTicketText: {
@@ -315,7 +315,7 @@ const styles = StyleSheet.create({
     fontWeight: Theme.fontWeight.semibold,
   },
   participantsText: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: Theme.fontSize.sm,
     color: Colors.primary,
     marginBottom: Theme.spacing.lg,
@@ -324,9 +324,9 @@ const styles = StyleSheet.create({
     marginBottom: Theme.spacing.lg,
   },
   sectionHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginBottom: Theme.spacing.md,
   },
   sectionTitle: {
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
     color: Colors.textSecondary,
   },
   ticketsGrid: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: Theme.spacing.md,
   },
   ticketCard: {
@@ -347,7 +347,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.gray100,
     borderRadius: Theme.borderRadius.lg,
     padding: Theme.spacing.sm,
-    alignItems: 'center',
+    alignItems: "center",
     borderWidth: 1,
     borderColor: Colors.gray200,
   },
@@ -365,9 +365,9 @@ const styles = StyleSheet.create({
     gap: Theme.spacing.sm,
   },
   resultRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   resultInfo: {
     flex: 1,
@@ -391,29 +391,29 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     padding: Theme.spacing.md,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: "row",
+    justifyContent: "space-around",
     marginHorizontal: Theme.spacing.md,
     marginBottom: Theme.spacing.md,
   },
   navItem: {
-    alignItems: 'center',
+    alignItems: "center",
     gap: Theme.spacing.xs,
   },
   navIcon: {
     width: 48,
     height: 48,
     borderRadius: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   navIconActive: {
     width: 48,
     height: 48,
     backgroundColor: Colors.primary,
     borderRadius: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   navText: {
     fontSize: Theme.fontSize.xs,
