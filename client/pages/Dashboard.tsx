@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Home, FileText, Wallet, Grid3X3 } from "lucide-react";
+import { Home, FileText, Wallet, User, Bell } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   return (
@@ -30,8 +31,14 @@ export default function Dashboard() {
           <div className="w-10 h-10 bg-lotto-green rounded-full"></div>
           <span className="text-sm">Hola, Manuel 👋</span>
         </div>
-        <div className="bg-lotto-black text-lotto-green px-3 py-1 rounded-full text-sm font-semibold">
-          💰 1,202,365 USDT
+        <div className="flex items-center gap-3">
+          <Link to="/notificaciones" className="relative">
+            <Bell className="w-6 h-6 text-black" />
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></div>
+          </Link>
+          <div className="bg-lotto-black text-lotto-green px-3 py-1 rounded-full text-sm font-semibold">
+            💰 1,202,365 USDT
+          </div>
         </div>
       </div>
 
@@ -46,9 +53,11 @@ export default function Dashboard() {
           <p className="text-sm text-red-500 mt-1">Finaliza en 3d 04h 12m</p>
         </div>
 
-        <Button className="w-full bg-lotto-green text-lotto-black hover:bg-lotto-green/90 rounded-full py-6 text-lg font-semibold mb-4">
-          Comprar boleto
-        </Button>
+        <Link to="/comprar-tickets">
+          <Button className="w-full bg-lotto-green text-lotto-black hover:bg-lotto-green/90 rounded-full py-6 text-lg font-semibold mb-4">
+            Comprar boleto
+          </Button>
+        </Link>
 
         <p className="text-center text-sm text-lotto-green mb-8">
           15M de boletos ya participan
@@ -112,24 +121,24 @@ export default function Dashboard() {
             </div>
             <span className="text-xs text-lotto-green font-medium">Home</span>
           </div>
-          <div className="flex flex-col items-center gap-1">
+          <Link to="/comprar-tickets" className="flex flex-col items-center gap-1">
             <div className="w-12 h-12 flex items-center justify-center">
               <FileText className="w-6 h-6 text-white" />
             </div>
             <span className="text-xs text-white">Boletos</span>
-          </div>
-          <div className="flex flex-col items-center gap-1">
+          </Link>
+          <Link to="/mi-saldo" className="flex flex-col items-center gap-1">
             <div className="w-12 h-12 flex items-center justify-center">
               <Wallet className="w-6 h-6 text-white" />
             </div>
             <span className="text-xs text-white">Wallet</span>
-          </div>
-          <div className="flex flex-col items-center gap-1">
+          </Link>
+          <Link to="/mi-perfil" className="flex flex-col items-center gap-1">
             <div className="w-12 h-12 flex items-center justify-center">
-              <Grid3X3 className="w-6 h-6 text-white" />
+              <User className="w-6 h-6 text-white" />
             </div>
             <span className="text-xs text-white">Perfil</span>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
