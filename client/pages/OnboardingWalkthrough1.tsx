@@ -27,7 +27,7 @@ export default function OnboardingWalkthrough1() {
 
       {/* Skip button */}
       <div className="flex justify-end px-6 py-4">
-        <Link to="/landing" className="text-lotto-black/70 font-medium">
+        <Link to="/landing" className="text-lotto-text-secondary font-medium">
           Skip
         </Link>
       </div>
