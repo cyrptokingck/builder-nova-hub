@@ -52,11 +52,7 @@ export default function IniciarSesion() {
             <label className="block text-sm font-medium text-foreground mb-1">
               Email
             </label>
-            <Input 
-              type="email"
-              placeholder="Email"
-              className="w-full"
-            />
+            <Input type="email" placeholder="Email" className="w-full" />
           </div>
 
           <div>
@@ -64,7 +60,7 @@ export default function IniciarSesion() {
               Contraseña
             </label>
             <div className="relative">
-              <Input 
+              <Input
                 type={showPassword ? "text" : "password"}
                 placeholder="Contraseña"
                 className="w-full pr-12"
@@ -80,7 +76,10 @@ export default function IniciarSesion() {
           </div>
 
           <div className="text-center">
-            <Link to="/olvido-contrasena" className="text-foreground font-medium underline">
+            <Link
+              to="/olvido-contrasena"
+              className="text-foreground font-medium underline"
+            >
               ¿Olvidaste tu contraseña?
             </Link>
           </div>
@@ -89,15 +88,16 @@ export default function IniciarSesion() {
 
       {/* Bottom section */}
       <div className="px-6 pb-8 space-y-4">
-        <Button 
-          className="w-full bg-lotto-green text-lotto-black hover:bg-lotto-green/90 rounded-full py-6 text-lg font-semibold"
-        >
+        <Button className="w-full bg-lotto-green text-lotto-black hover:bg-lotto-green/90 rounded-full py-6 text-lg font-semibold">
           Iniciar sesión
         </Button>
-        
+
         <div className="text-center">
           <span className="text-muted-foreground">¿No tienes una cuenta? </span>
-          <Link to="/crear-cuenta" className="text-foreground font-semibold underline">
+          <Link
+            to="/crear-cuenta"
+            className="text-foreground font-semibold underline"
+          >
             Crear cuenta
           </Link>
         </div>

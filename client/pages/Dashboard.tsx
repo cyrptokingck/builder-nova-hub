@@ -38,7 +38,9 @@ export default function Dashboard() {
       {/* Main content */}
       <div className="flex-1 px-6">
         <div className="text-center mb-8">
-          <p className="text-sm text-muted-foreground">Esta semana repartimos 🎯</p>
+          <p className="text-sm text-muted-foreground">
+            Esta semana repartimos 🎯
+          </p>
           <h1 className="text-4xl font-bold text-lotto-green">45 000 000</h1>
           <p className="text-xl text-muted-foreground">USDT</p>
           <p className="text-sm text-red-500 mt-1">Finaliza en 3d 04h 12m</p>
@@ -56,11 +58,16 @@ export default function Dashboard() {
           <h2 className="text-lg font-semibold mb-4">Boletos activos</h2>
           <div className="grid grid-cols-3 gap-4">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-card border rounded-lg p-3 text-center">
+              <div
+                key={i}
+                className="bg-card border rounded-lg p-3 text-center"
+              >
                 <div className="text-sm font-semibold">08 23</div>
                 <div className="text-sm font-semibold">32 36</div>
                 <div className="text-sm font-semibold">36 36</div>
-                <div className="text-xs text-muted-foreground mt-1">Fri, 01 ago</div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  Fri, 01 ago
+                </div>
               </div>
             ))}
           </div>
@@ -75,14 +82,20 @@ export default function Dashboard() {
             <div className="flex justify-between items-center">
               <div>
                 <div className="font-semibold">08 23 32 36 36 66</div>
-                <div className="text-xs text-muted-foreground">Fri, 25 jun 2025</div>
+                <div className="text-xs text-muted-foreground">
+                  Fri, 25 jun 2025
+                </div>
               </div>
-              <div className="text-lotto-green font-semibold">15 223 365 USDT</div>
+              <div className="text-lotto-green font-semibold">
+                15 223 365 USDT
+              </div>
             </div>
             <div className="flex justify-between items-center">
               <div>
                 <div className="font-semibold">32 54 50 25 78 95</div>
-                <div className="text-xs text-muted-foreground">Fri, 18 jun 2025</div>
+                <div className="text-xs text-muted-foreground">
+                  Fri, 18 jun 2025
+                </div>
               </div>
               <div className="text-lotto-green font-semibold">22 USDT</div>
             </div>

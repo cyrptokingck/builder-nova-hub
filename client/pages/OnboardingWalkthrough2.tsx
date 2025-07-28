@@ -39,25 +39,42 @@ export default function OnboardingWalkthrough2() {
             Participa con solo unos céntimos
           </h1>
           <p className="text-lg text-lotto-text-secondary max-w-sm">
-            Compra boletos con pequeñas cantidades y entra en sorteos semanales. Cuantos más boletos, más oportunidades.
+            Compra boletos con pequeñas cantidades y entra en sorteos semanales.
+            Cuantos más boletos, más oportunidades.
           </p>
         </div>
 
         {/* 3D Illustration - Leprechaun with gold (from original design) */}
         <div className="relative w-80 h-80 mb-8">
           {/* Gold coins scattered around */}
-          <div className="absolute top-8 left-8 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0s' }}>
+          <div
+            className="absolute top-8 left-8 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "0s" }}
+          >
             <div className="absolute inset-1 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">$</div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">
+              $
+            </div>
           </div>
-          <div className="absolute top-4 right-12 w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.3s' }}>
+          <div
+            className="absolute top-4 right-12 w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "0.3s" }}
+          >
             <div className="absolute inset-1 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
           </div>
-          <div className="absolute top-16 left-4 w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.6s' }}>
+          <div
+            className="absolute top-16 left-4 w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "0.6s" }}
+          >
             <div className="absolute inset-1 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">$</div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">
+              $
+            </div>
           </div>
-          <div className="absolute top-24 right-8 w-7 h-7 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.9s' }}>
+          <div
+            className="absolute top-24 right-8 w-7 h-7 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "0.9s" }}
+          >
             <div className="absolute inset-1 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
           </div>
 
@@ -68,7 +85,7 @@ export default function OnboardingWalkthrough2() {
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-2 bg-green-700 rounded-full"></div>
               <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-4 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-sm"></div>
             </div>
-            
+
             {/* Head */}
             <div className="w-20 h-20 bg-gradient-to-br from-orange-200 to-orange-300 rounded-full shadow-lg relative">
               {/* Eyes */}
@@ -81,7 +98,7 @@ export default function OnboardingWalkthrough2() {
               {/* Beard */}
               <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-8 bg-gradient-to-b from-orange-600 to-orange-700 rounded-b-full"></div>
             </div>
-            
+
             {/* Body */}
             <div className="w-16 h-24 bg-gradient-to-b from-green-500 to-green-700 rounded-lg shadow-lg mx-auto">
               {/* Belt */}
@@ -125,7 +142,7 @@ export default function OnboardingWalkthrough2() {
 
         {/* Next button */}
         <div className="flex justify-end">
-          <Button 
+          <Button
             asChild
             className="w-16 h-16 bg-lotto-button-dark text-lotto-green hover:bg-lotto-button-dark/90 rounded-full p-0"
           >

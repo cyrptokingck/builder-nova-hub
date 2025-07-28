@@ -3,6 +3,7 @@
 ## 🚀 Quick Start
 
 ### 1. Install Dependencies
+
 ```bash
 # Install Expo CLI globally
 npm install -g @expo/cli
@@ -12,6 +13,7 @@ npm install
 ```
 
 ### 2. Start Development
+
 ```bash
 # Start Expo development server
 npx expo start
@@ -25,16 +27,19 @@ npx expo start --web     # Web browser
 ### 3. Required Setup
 
 #### Install React Navigation Dependencies
+
 ```bash
 npx expo install react-native-screens react-native-safe-area-context
 ```
 
 #### Install Gesture Handler
+
 ```bash
 npx expo install react-native-gesture-handler
 ```
 
 #### Install Vector Icons
+
 ```bash
 npx expo install react-native-vector-icons
 npx expo install lucide-react-native
@@ -72,22 +77,26 @@ npx expo install lucide-react-native
 ## 📝 Key Features Implemented
 
 ### ✅ Onboarding Flow
+
 - 5 animated onboarding screens
 - Progress indicators
 - Skip functionality
 - Smooth transitions
 
 ### ✅ Landing Screen
+
 - Animated rocket with 3D effects
 - Floating coins with bounce animations
 - Call-to-action buttons
 
 ### ✅ Navigation
+
 - Stack navigation setup
 - Proper screen transitions
 - Type-safe navigation
 
 ### ✅ Responsive Design
+
 - Mobile-first approach
 - Safe area handling
 - Status bar configuration
@@ -95,21 +104,25 @@ npx expo install lucide-react-native
 ## 🔧 Next Steps
 
 1. **Create remaining screens**:
+
    - `CrearCuentaScreen.tsx`
    - `IniciarSesionScreen.tsx`
    - `DashboardScreen.tsx`
 
 2. **Add state management**:
+
    - Redux Toolkit or Zustand
    - User authentication
    - App state persistence
 
 3. **Implement forms**:
+
    - React Hook Form
    - Input validation
    - Error handling
 
 4. **Add networking**:
+
    - API integration
    - HTTP client setup
    - Error boundary
@@ -167,6 +180,7 @@ npx eas build --platform all
 ## 🎯 Current Status
 
 ✅ **Completed**:
+
 - Project setup and configuration
 - Onboarding screens with animations
 - Landing screen with 3D effects
@@ -174,6 +188,7 @@ npx eas build --platform all
 - Color scheme implementation
 
 🔄 **Next Priority**:
+
 - Complete remaining screens
 - Add form handling
 - Implement API integration

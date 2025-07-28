@@ -45,35 +45,53 @@ export default function Landing() {
             <div className="absolute top-16 left-2 right-2 h-1 bg-white/20 rounded"></div>
             <div className="absolute top-20 left-2 right-2 h-1 bg-white/20 rounded"></div>
           </div>
-          
+
           {/* Rocket fins */}
           <div className="absolute bottom-20 left-12 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-b-[30px] border-b-blue-700"></div>
           <div className="absolute bottom-20 right-12 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-b-[30px] border-b-blue-700"></div>
-          
+
           {/* Fire/exhaust */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-16 h-20">
             <div className="w-full h-full bg-gradient-to-b from-red-500 via-orange-500 to-yellow-400 rounded-t-lg opacity-90 animate-pulse"></div>
           </div>
-          
+
           {/* Clouds */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-16 bg-white rounded-full opacity-80"></div>
           <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 translate-x-8 w-24 h-12 bg-white rounded-full opacity-60"></div>
           <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 -translate-x-8 w-20 h-10 bg-white rounded-full opacity-60"></div>
-          
+
           {/* Floating coins */}
-          <div className="absolute top-4 left-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0s' }}>
+          <div
+            className="absolute top-4 left-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "0s" }}
+          >
             <div className="absolute inset-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">$</div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">
+              $
+            </div>
           </div>
-          <div className="absolute top-12 right-8 w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.5s' }}>
+          <div
+            className="absolute top-12 right-8 w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "0.5s" }}
+          >
             <div className="absolute inset-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">$</div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">
+              $
+            </div>
           </div>
-          <div className="absolute top-20 left-8 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '1s' }}>
+          <div
+            className="absolute top-20 left-8 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "1s" }}
+          >
             <div className="absolute inset-1 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">$</div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">
+              $
+            </div>
           </div>
-          <div className="absolute top-32 right-4 w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '1.5s' }}>
+          <div
+            className="absolute top-32 right-4 w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "1.5s" }}
+          >
             <div className="absolute inset-1 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
           </div>
         </div>
@@ -81,16 +99,21 @@ export default function Landing() {
 
       {/* Bottom section */}
       <div className="w-full px-6 pb-8 space-y-4">
-        <Button 
+        <Button
           asChild
           className="w-full bg-lotto-button-dark text-lotto-green hover:bg-lotto-button-dark/90 rounded-full py-6 text-lg font-semibold"
         >
           <Link to="/crear-cuenta">Crear cuenta</Link>
         </Button>
-        
+
         <div className="text-center">
-          <span className="text-lotto-text-secondary">¿Tienes una cuenta? </span>
-          <Link to="/iniciar-sesion" className="text-lotto-text-primary font-semibold underline">
+          <span className="text-lotto-text-secondary">
+            ¿Tienes una cuenta?{" "}
+          </span>
+          <Link
+            to="/iniciar-sesion"
+            className="text-lotto-text-primary font-semibold underline"
+          >
             Inicia sesión
           </Link>
         </div>

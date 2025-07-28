@@ -39,31 +39,55 @@ export default function OnboardingWalkthrough3() {
             Mucho más que suerte
           </h1>
           <p className="text-lg text-lotto-text-secondary max-w-sm">
-            No prometemos riquezas irreales, solo un sistema justo, accesible y divertido para todos, sin importar dónde estés.
+            No prometemos riquezas irreales, solo un sistema justo, accesible y
+            divertido para todos, sin importar dónde estés.
           </p>
         </div>
 
         {/* 3D Illustration - Person meditating with floating coins */}
         <div className="relative w-80 h-80 mb-8">
           {/* Floating coins around */}
-          <div className="absolute top-8 left-8 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0s' }}>
+          <div
+            className="absolute top-8 left-8 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "0s" }}
+          >
             <div className="absolute inset-1 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">$</div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">
+              $
+            </div>
           </div>
-          <div className="absolute top-4 right-12 w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.3s' }}>
+          <div
+            className="absolute top-4 right-12 w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "0.3s" }}
+          >
             <div className="absolute inset-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">$</div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">
+              $
+            </div>
           </div>
-          <div className="absolute top-16 right-4 w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.6s' }}>
+          <div
+            className="absolute top-16 right-4 w-6 h-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "0.6s" }}
+          >
             <div className="absolute inset-1 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
           </div>
-          <div className="absolute top-32 left-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.9s' }}>
+          <div
+            className="absolute top-32 left-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "0.9s" }}
+          >
             <div className="absolute inset-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-sm">$</div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-sm">
+              $
+            </div>
           </div>
-          <div className="absolute bottom-8 right-8 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '1.2s' }}>
+          <div
+            className="absolute bottom-8 right-8 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg animate-bounce"
+            style={{ animationDelay: "1.2s" }}
+          >
             <div className="absolute inset-1 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">$</div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-800 font-bold text-xs">
+              $
+            </div>
           </div>
 
           {/* Main character - Person in meditation pose */}
@@ -80,14 +104,14 @@ export default function OnboardingWalkthrough3() {
               <div className="absolute top-1 left-1 w-4 h-4 bg-blue-600 rounded-full"></div>
               <div className="absolute top-1 right-1 w-4 h-4 bg-blue-600 rounded-full"></div>
             </div>
-            
+
             {/* Body */}
             <div className="w-20 h-16 bg-gradient-to-b from-yellow-400 to-yellow-600 rounded-lg shadow-lg mx-auto mb-2">
               {/* Arms positioned for meditation */}
               <div className="absolute -left-3 top-2 w-6 h-12 bg-gradient-to-b from-orange-200 to-orange-300 rounded-full transform rotate-45"></div>
               <div className="absolute -right-3 top-2 w-6 h-12 bg-gradient-to-b from-orange-200 to-orange-300 rounded-full transform -rotate-45"></div>
             </div>
-            
+
             {/* Legs in lotus position */}
             <div className="relative">
               <div className="absolute -left-4 top-0 w-8 h-12 bg-gradient-to-b from-blue-500 to-blue-700 rounded-lg transform rotate-12"></div>
@@ -113,7 +137,7 @@ export default function OnboardingWalkthrough3() {
 
         {/* Next button */}
         <div className="flex justify-end">
-          <Button 
+          <Button
             asChild
             className="w-16 h-16 bg-lotto-button-dark text-lotto-green hover:bg-lotto-button-dark/90 rounded-full p-0"
           >

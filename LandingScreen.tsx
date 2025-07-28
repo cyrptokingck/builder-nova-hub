@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   Text,
@@ -8,10 +8,10 @@ import {
   StatusBar,
   SafeAreaView,
   Animated,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 
 const LandingScreen = () => {
   const navigation = useNavigation();
@@ -37,7 +37,7 @@ const LandingScreen = () => {
           duration: 800,
           useNativeDriver: true,
         }),
-      ])
+      ]),
     );
 
     // Coin bounce animations with different delays
@@ -55,7 +55,7 @@ const LandingScreen = () => {
             duration: 1200,
             useNativeDriver: true,
           }),
-        ])
+        ]),
       );
     };
 
@@ -73,7 +73,7 @@ const LandingScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#CAF206" />
-      
+
       {/* Status Bar */}
       <View style={styles.statusBar}>
         <Text style={styles.timeText}>12:00</Text>
@@ -115,11 +115,8 @@ const LandingScreen = () => {
           <View style={[styles.rocketFin, styles.rocketFinRight]} />
 
           {/* Fire/Exhaust */}
-          <Animated.View 
-            style={[
-              styles.rocketFire,
-              { transform: [{ scaleY: pulseAnim }] }
-            ]}
+          <Animated.View
+            style={[styles.rocketFire, { transform: [{ scaleY: pulseAnim }] }]}
           />
 
           {/* Clouds */}
@@ -128,44 +125,44 @@ const LandingScreen = () => {
           <View style={[styles.cloud, styles.cloud3]} />
 
           {/* Floating Coins */}
-          <Animated.View 
+          <Animated.View
             style={[
               styles.floatingCoin,
               styles.coin1,
-              { transform: [{ translateY: coinBounce1 }] }
+              { transform: [{ translateY: coinBounce1 }] },
             ]}
           >
             <View style={styles.coinInner} />
             <Text style={styles.coinText}>$</Text>
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.floatingCoin,
               styles.coin2,
-              { transform: [{ translateY: coinBounce2 }] }
+              { transform: [{ translateY: coinBounce2 }] },
             ]}
           >
             <View style={styles.coinInner} />
             <Text style={styles.coinText}>$</Text>
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.floatingCoin,
               styles.coin3,
-              { transform: [{ translateY: coinBounce3 }] }
+              { transform: [{ translateY: coinBounce3 }] },
             ]}
           >
             <View style={styles.coinInner} />
             <Text style={styles.coinText}>$</Text>
           </Animated.View>
 
-          <Animated.View 
+          <Animated.View
             style={[
               styles.floatingCoin,
               styles.coin4,
-              { transform: [{ translateY: coinBounce4 }] }
+              { transform: [{ translateY: coinBounce4 }] },
             ]}
           >
             <View style={styles.coinInner} />
@@ -175,16 +172,18 @@ const LandingScreen = () => {
 
       {/* Bottom Section */}
       <View style={styles.bottomSection}>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.createAccountButton}
-          onPress={() => navigation.navigate('CrearCuenta')}
+          onPress={() => navigation.navigate("CrearCuenta")}
         >
           <Text style={styles.createAccountText}>Crear cuenta</Text>
         </TouchableOpacity>
-        
+
         <View style={styles.loginContainer}>
           <Text style={styles.loginPrompt}>¿Tienes una cuenta? </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('IniciarSesion')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("IniciarSesion")}
+          >
             <Text style={styles.loginLink}>Inicia sesión</Text>
           </TouchableOpacity>
         </View>
@@ -201,33 +200,33 @@ const LandingScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#CAF206',
+    backgroundColor: "#CAF206",
   },
   statusBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: 24,
     paddingTop: 16,
   },
   timeText: {
-    color: '#000000',
+    color: "#000000",
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   statusIcons: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 4,
   },
   signalBars: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 2,
   },
   signalBar: {
     width: 4,
     height: 12,
-    backgroundColor: '#000000',
+    backgroundColor: "#000000",
     borderRadius: 2,
   },
   signalBarWeak: {
@@ -236,96 +235,96 @@ const styles = StyleSheet.create({
   battery: {
     width: 24,
     height: 12,
-    backgroundColor: '#000000',
+    backgroundColor: "#000000",
     borderRadius: 2,
     marginLeft: 4,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   batteryLevel: {
     width: 16,
     height: 8,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 1,
   },
   content: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingHorizontal: 24,
   },
   titleContainer: {
     marginBottom: 32,
-    alignItems: 'center',
+    alignItems: "center",
   },
   title: {
     fontSize: 36,
-    fontWeight: 'bold',
-    color: '#000000',
+    fontWeight: "bold",
+    color: "#000000",
     marginBottom: 16,
   },
   subtitle: {
     fontSize: 18,
-    color: '#6C6C6C',
-    textAlign: 'center',
+    color: "#6C6C6C",
+    textAlign: "center",
     maxWidth: 280,
     lineHeight: 24,
   },
   rocketContainer: {
     width: 320,
     height: 320,
-    position: 'relative',
+    position: "relative",
     marginBottom: 32,
   },
   rocketBody: {
-    position: 'absolute',
+    position: "absolute",
     top: 32,
-    left: '50%',
+    left: "50%",
     marginLeft: -48,
     width: 96,
     height: 160,
-    backgroundColor: '#3B82F6',
+    backgroundColor: "#3B82F6",
     borderTopLeftRadius: 48,
     borderTopRightRadius: 48,
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
     elevation: 8,
   },
   rocketWindow: {
-    position: 'absolute',
+    position: "absolute",
     top: 24,
-    left: '50%',
+    left: "50%",
     marginLeft: -16,
     width: 32,
     height: 32,
-    backgroundColor: '#FB923C',
+    backgroundColor: "#FB923C",
     borderRadius: 16,
     borderWidth: 2,
-    borderColor: '#EA580C',
+    borderColor: "#EA580C",
   },
   rocketStripe: {
-    position: 'absolute',
+    position: "absolute",
     left: 8,
     right: 8,
     height: 4,
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backgroundColor: "rgba(255, 255, 255, 0.2)",
     borderRadius: 2,
   },
   rocketFin: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 80,
     width: 0,
     height: 0,
     borderLeftWidth: 20,
     borderRightWidth: 20,
     borderBottomWidth: 30,
-    borderLeftColor: 'transparent',
-    borderRightColor: 'transparent',
-    borderBottomColor: '#1E40AF',
+    borderLeftColor: "transparent",
+    borderRightColor: "transparent",
+    borderBottomColor: "#1E40AF",
   },
   rocketFinLeft: {
     left: 48,
@@ -334,33 +333,33 @@ const styles = StyleSheet.create({
     right: 48,
   },
   rocketFire: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 32,
-    left: '50%',
+    left: "50%",
     marginLeft: -32,
     width: 64,
     height: 80,
-    backgroundColor: '#EF4444',
+    backgroundColor: "#EF4444",
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
     opacity: 0.9,
   },
   cloud: {
-    position: 'absolute',
-    backgroundColor: 'white',
+    position: "absolute",
+    backgroundColor: "white",
     borderRadius: 50,
     opacity: 0.8,
   },
   cloud1: {
     bottom: 0,
-    left: '50%',
+    left: "50%",
     marginLeft: -64,
     width: 128,
     height: 64,
   },
   cloud2: {
     bottom: 8,
-    left: '50%',
+    left: "50%",
     marginLeft: -32,
     width: 96,
     height: 48,
@@ -368,19 +367,19 @@ const styles = StyleSheet.create({
   },
   cloud3: {
     bottom: 8,
-    left: '50%',
+    left: "50%",
     marginLeft: -96,
     width: 80,
     height: 40,
     opacity: 0.6,
   },
   floatingCoin: {
-    position: 'absolute',
-    backgroundColor: '#FBBF24',
+    position: "absolute",
+    backgroundColor: "#FBBF24",
     borderRadius: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    shadowColor: '#000',
+    justifyContent: "center",
+    alignItems: "center",
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
@@ -411,17 +410,17 @@ const styles = StyleSheet.create({
     height: 24,
   },
   coinInner: {
-    position: 'absolute',
+    position: "absolute",
     top: 8,
     left: 8,
     right: 8,
     bottom: 8,
-    backgroundColor: '#FDE047',
+    backgroundColor: "#FDE047",
     borderRadius: 50,
   },
   coinText: {
-    color: '#92400E',
-    fontWeight: 'bold',
+    color: "#92400E",
+    fontWeight: "bold",
     fontSize: 12,
   },
   bottomSection: {
@@ -429,42 +428,42 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
   },
   createAccountButton: {
-    width: '100%',
-    backgroundColor: '#000000',
+    width: "100%",
+    backgroundColor: "#000000",
     borderRadius: 50,
     paddingVertical: 24,
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: 16,
   },
   createAccountText: {
-    color: '#CAF206',
+    color: "#CAF206",
     fontSize: 18,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   loginContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
     marginBottom: 16,
   },
   loginPrompt: {
-    color: '#6C6C6C',
+    color: "#6C6C6C",
     fontSize: 16,
   },
   loginLink: {
-    color: '#000000',
+    color: "#000000",
     fontSize: 16,
-    fontWeight: '600',
-    textDecorationLine: 'underline',
+    fontWeight: "600",
+    textDecorationLine: "underline",
   },
   progressIndicator: {
-    alignItems: 'center',
+    alignItems: "center",
     paddingTop: 16,
   },
   progressBar: {
     width: 32,
     height: 4,
-    backgroundColor: '#000000',
+    backgroundColor: "#000000",
     borderRadius: 2,
   },
 });

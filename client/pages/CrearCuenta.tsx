@@ -45,7 +45,8 @@ export default function CrearCuenta() {
             Crear cuenta
           </h1>
           <p className="text-muted-foreground">
-            Por favor introduce todos los datos que solicitamos para crear tu cuenta.
+            Por favor introduce todos los datos que solicitamos para crear tu
+            cuenta.
           </p>
         </div>
 
@@ -54,27 +55,21 @@ export default function CrearCuenta() {
             <label className="block text-sm font-medium text-foreground mb-1">
               Nombre
             </label>
-            <Input 
-              placeholder="Manuel"
-              className="w-full"
-            />
+            <Input placeholder="Manuel" className="w-full" />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-foreground mb-1">
               Apellidos
             </label>
-            <Input 
-              placeholder="Campos P"
-              className="w-full"
-            />
+            <Input placeholder="Campos P" className="w-full" />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-foreground mb-1">
               Email
             </label>
-            <Input 
+            <Input
               type="email"
               placeholder="manuel.g.campos.p@gmail.com"
               className="w-full"
@@ -86,7 +81,7 @@ export default function CrearCuenta() {
               Contraseña
             </label>
             <div className="relative">
-              <Input 
+              <Input
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••••"
                 className="w-full pr-12"
@@ -106,7 +101,7 @@ export default function CrearCuenta() {
               Confirmar contraseña
             </label>
             <div className="relative">
-              <Input 
+              <Input
                 type={showConfirmPassword ? "text" : "password"}
                 placeholder="••••••••••"
                 className="w-full pr-12"
@@ -123,13 +118,22 @@ export default function CrearCuenta() {
 
           <div className="flex items-start space-x-2 pt-4">
             <Checkbox id="terms" className="mt-1" />
-            <label htmlFor="terms" className="text-sm text-muted-foreground leading-5">
+            <label
+              htmlFor="terms"
+              className="text-sm text-muted-foreground leading-5"
+            >
               He leído y acepto los{" "}
-              <Link to="/terminos" className="text-foreground font-medium underline">
+              <Link
+                to="/terminos"
+                className="text-foreground font-medium underline"
+              >
                 Términos y Condiciones
               </Link>{" "}
               y la{" "}
-              <Link to="/privacidad" className="text-foreground font-medium underline">
+              <Link
+                to="/privacidad"
+                className="text-foreground font-medium underline"
+              >
                 Política de Privacidad
               </Link>
             </label>
@@ -139,7 +143,7 @@ export default function CrearCuenta() {
 
       {/* Bottom button */}
       <div className="px-6 pb-8">
-        <Button 
+        <Button
           asChild
           className="w-full bg-lotto-green text-lotto-black hover:bg-lotto-green/90 rounded-full py-6 text-lg font-semibold"
         >

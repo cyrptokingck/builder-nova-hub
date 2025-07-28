@@ -30,11 +30,26 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/onboarding-walkthrough-1" element={<OnboardingWalkthrough1 />} />
-          <Route path="/onboarding-walkthrough-2" element={<OnboardingWalkthrough2 />} />
-          <Route path="/onboarding-walkthrough-3" element={<OnboardingWalkthrough3 />} />
-          <Route path="/onboarding-walkthrough-4" element={<OnboardingWalkthrough4 />} />
-          <Route path="/onboarding-walkthrough-5" element={<OnboardingWalkthrough5 />} />
+          <Route
+            path="/onboarding-walkthrough-1"
+            element={<OnboardingWalkthrough1 />}
+          />
+          <Route
+            path="/onboarding-walkthrough-2"
+            element={<OnboardingWalkthrough2 />}
+          />
+          <Route
+            path="/onboarding-walkthrough-3"
+            element={<OnboardingWalkthrough3 />}
+          />
+          <Route
+            path="/onboarding-walkthrough-4"
+            element={<OnboardingWalkthrough4 />}
+          />
+          <Route
+            path="/onboarding-walkthrough-5"
+            element={<OnboardingWalkthrough5 />}
+          />
           <Route path="/landing" element={<Landing />} />
           <Route path="/crear-cuenta" element={<CrearCuenta />} />
           <Route path="/iniciar-sesion" element={<IniciarSesion />} />

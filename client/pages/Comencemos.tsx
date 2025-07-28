@@ -39,7 +39,8 @@ export default function Comencemos() {
             Comencemos!
           </h1>
           <p className="text-muted-foreground">
-            Por favor introduce tu teléfono móvil para verificar tu cuenta vía SMS
+            Por favor introduce tu teléfono móvil para verificar tu cuenta vía
+            SMS
           </p>
         </div>
 
@@ -49,8 +50,16 @@ export default function Comencemos() {
               <div className="flex items-center pr-3 border-r border-input">
                 <div className="w-6 h-4 bg-red-500 rounded-sm mr-2"></div>
                 <span className="text-sm font-medium">+34</span>
-                <svg className="w-4 h-4 ml-1 text-muted-foreground" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                <svg
+                  className="w-4 h-4 ml-1 text-muted-foreground"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </div>
               <input
@@ -65,16 +74,20 @@ export default function Comencemos() {
         <div className="mb-8 text-center text-sm text-muted-foreground">
           <p>
             Haciendo click en "Siguiente" estas de acuerdo con nuestras{" "}
-            <Link to="/politicas" className="text-foreground underline">políticas</Link>{" "}
+            <Link to="/politicas" className="text-foreground underline">
+              políticas
+            </Link>{" "}
             y{" "}
-            <Link to="/terminos" className="text-foreground underline">términos</Link>
+            <Link to="/terminos" className="text-foreground underline">
+              términos
+            </Link>
           </p>
         </div>
       </div>
 
       {/* Bottom button */}
       <div className="px-6 pb-8">
-        <Button 
+        <Button
           disabled
           className="w-full bg-muted text-muted-foreground rounded-full py-6 text-lg font-semibold cursor-not-allowed"
         >
