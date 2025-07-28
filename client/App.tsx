@@ -28,6 +28,7 @@ const App = () => (
           <Route path="/iniciar-sesion" element={<IniciarSesion />} />
           <Route path="/comencemos" element={<Comencemos />} />
           <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
