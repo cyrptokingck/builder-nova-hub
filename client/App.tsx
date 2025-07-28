@@ -13,6 +13,12 @@ import IniciarSesion from "./pages/IniciarSesion";
 import Comencemos from "./pages/Comencemos";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
+import Landing from "./pages/Landing";
+import OnboardingWalkthrough1 from "./pages/OnboardingWalkthrough1";
+import OnboardingWalkthrough2 from "./pages/OnboardingWalkthrough2";
+import OnboardingWalkthrough3 from "./pages/OnboardingWalkthrough3";
+import OnboardingWalkthrough4 from "./pages/OnboardingWalkthrough4";
+import OnboardingWalkthrough5 from "./pages/OnboardingWalkthrough5";
 
 const queryClient = new QueryClient();
 
