@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-lotto-green flex flex-col items-center justify-between relative overflow-hidden">
+    <div className="min-h-screen bg-lotto-background flex flex-col items-center justify-between relative overflow-hidden">
       {/* Mobile status bar simulation */}
-      <div className="w-full flex justify-between items-center px-6 pt-4 text-lotto-black font-semibold">
+      <div className="w-full flex justify-between items-center px-6 pt-4 text-lotto-text-primary font-semibold">
         <span>12:00</span>
         <div className="flex items-center gap-1">
           <div className="flex gap-1">
@@ -27,10 +27,10 @@ export default function Landing() {
       {/* Main content */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 text-center">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-lotto-black mb-4">
+          <h1 className="text-4xl font-bold text-lotto-text-primary mb-4">
             LottoCoin
           </h1>
-          <p className="text-lg text-lotto-black/80 max-w-xs">
+          <p className="text-lg text-lotto-text-secondary max-w-xs">
             La forma justa, divertida y transparente de jugar con criptomonedas.
           </p>
         </div>
@@ -83,21 +83,21 @@ export default function Landing() {
       <div className="w-full px-6 pb-8 space-y-4">
         <Button 
           asChild
-          className="w-full bg-lotto-black text-lotto-green hover:bg-lotto-black/90 rounded-full py-6 text-lg font-semibold"
+          className="w-full bg-lotto-button-dark text-lotto-green hover:bg-lotto-button-dark/90 rounded-full py-6 text-lg font-semibold"
         >
           <Link to="/crear-cuenta">Crear cuenta</Link>
         </Button>
         
         <div className="text-center">
-          <span className="text-lotto-black/70">¿Tienes una cuenta? </span>
-          <Link to="/iniciar-sesion" className="text-lotto-black font-semibold underline">
+          <span className="text-lotto-text-secondary">¿Tienes una cuenta? </span>
+          <Link to="/iniciar-sesion" className="text-lotto-text-primary font-semibold underline">
             Inicia sesión
           </Link>
         </div>
 
         {/* Progress indicator */}
         <div className="flex justify-center pt-4">
-          <div className="w-8 h-1 bg-lotto-black rounded-full"></div>
+          <div className="w-8 h-1 bg-lotto-text-primary rounded-full"></div>
         </div>
       </div>
     </div>
