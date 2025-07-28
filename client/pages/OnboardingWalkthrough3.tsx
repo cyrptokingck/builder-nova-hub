@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 export default function OnboardingWalkthrough3() {
   return (
-    <div className="min-h-screen bg-lotto-green flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-lotto-background flex flex-col relative overflow-hidden">
       {/* Mobile status bar */}
-      <div className="w-full flex justify-between items-center px-6 pt-4 text-lotto-black font-semibold">
+      <div className="w-full flex justify-between items-center px-6 pt-4 text-lotto-text-primary font-semibold">
         <span>12:00</span>
         <div className="flex items-center gap-1">
           <div className="flex gap-1">
@@ -27,7 +27,7 @@ export default function OnboardingWalkthrough3() {
 
       {/* Skip button */}
       <div className="flex justify-end px-6 py-4">
-        <Link to="/landing" className="text-lotto-black/70 font-medium">
+        <Link to="/landing" className="text-lotto-text-secondary font-medium">
           Skip
         </Link>
       </div>
@@ -35,10 +35,10 @@ export default function OnboardingWalkthrough3() {
       {/* Content */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 text-center">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-lotto-black mb-4 max-w-xs leading-tight">
+          <h1 className="text-3xl font-bold text-lotto-text-primary mb-4 max-w-xs leading-tight">
             Mucho más que suerte
           </h1>
-          <p className="text-lg text-lotto-black/80 max-w-sm">
+          <p className="text-lg text-lotto-text-secondary max-w-sm">
             No prometemos riquezas irreales, solo un sistema justo, accesible y divertido para todos, sin importar dónde estés.
           </p>
         </div>
@@ -115,7 +115,7 @@ export default function OnboardingWalkthrough3() {
         <div className="flex justify-end">
           <Button 
             asChild
-            className="w-16 h-16 bg-lotto-black text-lotto-green hover:bg-lotto-black/90 rounded-full p-0"
+            className="w-16 h-16 bg-lotto-button-dark text-lotto-green hover:bg-lotto-button-dark/90 rounded-full p-0"
           >
             <Link to="/onboarding-walkthrough-4">
               <ArrowRight className="w-6 h-6" />
