@@ -12,6 +12,7 @@ import CrearCuenta from "./pages/CrearCuenta";
 import IniciarSesion from "./pages/IniciarSesion";
 import Comencemos from "./pages/Comencemos";
 import Onboarding from "./pages/Onboarding";
+import Dashboard from "./pages/Dashboard";
 
 const queryClient = new QueryClient();
 
