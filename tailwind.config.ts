@@ -57,6 +57,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "lotto-green": "hsl(var(--lotto-green))",
+        "lotto-green-dark": "hsl(var(--lotto-green-dark))",
+        "lotto-black": "hsl(var(--lotto-black))",
+        "lotto-gray": "hsl(var(--lotto-gray))",
+        "lotto-light-gray": "hsl(var(--lotto-light-gray))",
       },
       borderRadius: {
         lg: "var(--radius)",
