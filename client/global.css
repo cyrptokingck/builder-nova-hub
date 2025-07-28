@@ -18,33 +18,37 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 76 100% 50%;
-    --primary-foreground: 222.2 84% 4.9%;
+    --primary: 74 97% 42%;
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary-foreground: 0 0% 42%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 0 0% 42%;
 
-    --accent: 76 100% 50%;
-    --accent-foreground: 222.2 84% 4.9%;
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 76 100% 50%;
+    --ring: 74 97% 42%;
 
     --radius: 0.75rem;
 
-    /* LottoCoin Brand Colors */
-    --lotto-green: 76 100% 50%;
-    --lotto-green-dark: 76 100% 40%;
-    --lotto-black: 222.2 84% 4.9%;
-    --lotto-gray: 220 13% 91%;
-    --lotto-light-gray: 210 40% 96.1%;
+    /* LottoCoin Brand Colors - Exact Hex Match */
+    --lotto-green: 74 97% 42%; /* #CAF206 */
+    --lotto-background: 74 97% 42%; /* #CAF206 */
+    --lotto-black: 0 0% 0%; /* #000000 */
+    --lotto-text-primary: 0 0% 0%; /* #000000 */
+    --lotto-text-secondary: 0 0% 42%; /* #6C6C6C */
+    --lotto-button-dark: 0 0% 0%; /* #000000 */
+    --lotto-accent: 340 82% 52%; /* #E91E63 */
+    --lotto-error: 4 90% 58%; /* #F44336 */
+    --lotto-success: 156 73% 74%; /* #34D399 */
 
     --sidebar-background: 0 0% 98%;
 
@@ -73,31 +77,35 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 76 100% 50%;
-    --primary-foreground: 222.2 84% 4.9%;
+    --primary: 74 97% 42%;
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted-foreground: 0 0% 42%;
 
-    --accent: 76 100% 50%;
-    --accent-foreground: 222.2 84% 4.9%;
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 76 100% 50%;
+    --ring: 74 97% 42%;
 
-    /* LottoCoin Brand Colors */
-    --lotto-green: 76 100% 50%;
-    --lotto-green-dark: 76 100% 40%;
-    --lotto-black: 222.2 84% 4.9%;
-    --lotto-gray: 217.2 32.6% 17.5%;
-    --lotto-light-gray: 217.2 32.6% 17.5%;
+    /* LottoCoin Brand Colors - Exact Hex Match */
+    --lotto-green: 74 97% 42%; /* #CAF206 */
+    --lotto-background: 74 97% 42%; /* #CAF206 */
+    --lotto-black: 0 0% 0%; /* #000000 */
+    --lotto-text-primary: 0 0% 0%; /* #000000 */
+    --lotto-text-secondary: 0 0% 42%; /* #6C6C6C */
+    --lotto-button-dark: 0 0% 0%; /* #000000 */
+    --lotto-accent: 340 82% 52%; /* #E91E63 */
+    --lotto-error: 4 90% 58%; /* #F44336 */
+    --lotto-success: 156 73% 74%; /* #34D399 */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
