@@ -10,10 +10,10 @@ export default function OnboardingWalkthrough1() {
         <span>12:00</span>
         <div className="flex items-center gap-1">
           <div className="flex gap-1">
-            <div className="w-1 h-3 bg-lotto-black rounded-full"></div>
-            <div className="w-1 h-3 bg-lotto-black rounded-full"></div>
-            <div className="w-1 h-3 bg-lotto-black rounded-full"></div>
-            <div className="w-1 h-3 bg-lotto-black/40 rounded-full"></div>
+            <div className="w-1 h-3 bg-lotto-text-primary rounded-full"></div>
+            <div className="w-1 h-3 bg-lotto-text-primary rounded-full"></div>
+            <div className="w-1 h-3 bg-lotto-text-primary rounded-full"></div>
+            <div className="w-1 h-3 bg-lotto-text-primary/40 rounded-full"></div>
           </div>
           <svg className="w-6 h-4 fill-lotto-black ml-1" viewBox="0 0 24 16">
             <path d="M2 4h20v8H2z" />
