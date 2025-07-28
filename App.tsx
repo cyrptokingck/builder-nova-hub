@@ -12,7 +12,6 @@ import OnboardingWalkthrough5 from './screens/OnboardingWalkthrough5';
 import LandingScreen from './screens/LandingScreen';
 import CrearCuentaScreen from './screens/CrearCuentaScreen';
 import IniciarSesionScreen from './screens/IniciarSesionScreen';
-import DashboardScreen from './screens/DashboardScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +23,7 @@ export default function App() {
         initialRouteName="OnboardingWalkthrough1"
         screenOptions={{
           headerShown: false,
+          gestureEnabled: true,
           animation: 'slide_from_right',
         }}
       >
@@ -61,10 +61,6 @@ export default function App() {
         <Stack.Screen 
           name="IniciarSesion" 
           component={IniciarSesionScreen} 
-        />
-        <Stack.Screen 
-          name="Dashboard" 
-          component={DashboardScreen} 
         />
       </Stack.Navigator>
     </NavigationContainer>
