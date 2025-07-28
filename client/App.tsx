@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import CrearCuenta from "./pages/CrearCuenta";
 import IniciarSesion from "./pages/IniciarSesion";
 import Comencemos from "./pages/Comencemos";
+import Onboarding from "./pages/Onboarding";
 
 const queryClient = new QueryClient();
 
