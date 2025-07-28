@@ -19,7 +19,7 @@ export default function ComprarTickets() {
 
   const toggleNumber = (number: number) => {
     if (selectedNumbers.includes(number)) {
-      setSelectedNumbers(selectedNumbers.filter(n => n !== number));
+      setSelectedNumbers(selectedNumbers.filter((n) => n !== number));
     } else if (selectedNumbers.length < 6) {
       setSelectedNumbers([...selectedNumbers, number]);
     } else {
@@ -75,7 +75,7 @@ export default function ComprarTickets() {
 
   const handleBuyTickets = () => {
     const totalCost = getTotalCost();
-    
+
     if (totalCost === 0) {
       toast({
         title: "Error",
@@ -107,7 +107,10 @@ export default function ComprarTickets() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <div className="flex items-center justify-between p-6 border-b">
-        <Link to="/dashboard" className="flex items-center text-black hover:text-gray-600">
+        <Link
+          to="/dashboard"
+          className="flex items-center text-black hover:text-gray-600"
+        >
           <ArrowLeft className="w-6 h-6" />
         </Link>
         <h1 className="text-xl font-bold text-black">Comprar boletos</h1>
@@ -119,8 +122,12 @@ export default function ComprarTickets() {
         <Card className="border-2 border-[#CAF206]">
           <CardContent className="text-center p-6">
             <h2 className="text-lg text-gray-600 mb-2">Precio por boleto</h2>
-            <div className="text-3xl font-bold text-[#CAF206] mb-2">${ticketPrice} USDT</div>
-            <p className="text-sm text-gray-500">Selecciona 6 números del 1 al 49</p>
+            <div className="text-3xl font-bold text-[#CAF206] mb-2">
+              ${ticketPrice} USDT
+            </div>
+            <p className="text-sm text-gray-500">
+              Selecciona 6 números del 1 al 49
+            </p>
           </CardContent>
         </Card>
 
@@ -134,7 +141,9 @@ export default function ComprarTickets() {
               </div>
               <div className="text-right">
                 <p className="text-sm text-gray-500">Premio acumulado</p>
-                <p className="text-xl font-bold text-[#CAF206]">45,000,000 USDT</p>
+                <p className="text-xl font-bold text-[#CAF206]">
+                  45,000,000 USDT
+                </p>
               </div>
             </div>
             <div className="text-center">
@@ -149,9 +158,9 @@ export default function ComprarTickets() {
           <CardHeader>
             <div className="flex justify-between items-center">
               <CardTitle className="text-black">Selección manual</CardTitle>
-              <Button 
-                variant="ghost" 
-                size="sm" 
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={clearSelection}
                 className="text-[#CAF206] hover:text-[#CAF206]/80"
               >
@@ -164,13 +173,15 @@ export default function ComprarTickets() {
             <p className="text-sm text-gray-500">
               {selectedNumbers.length}/6 números seleccionados
             </p>
-            
+
             {/* Numbers Grid */}
             <div className="grid grid-cols-7 gap-2">
               {lotteryNumbers.map((number) => (
                 <Button
                   key={number}
-                  variant={selectedNumbers.includes(number) ? "default" : "outline"}
+                  variant={
+                    selectedNumbers.includes(number) ? "default" : "outline"
+                  }
                   size="sm"
                   className={`h-12 w-12 p-0 ${
                     selectedNumbers.includes(number)
@@ -178,7 +189,10 @@ export default function ComprarTickets() {
                       : "border-gray-300 text-black hover:bg-gray-50"
                   }`}
                   onClick={() => toggleNumber(number)}
-                  disabled={!selectedNumbers.includes(number) && selectedNumbers.length >= 6}
+                  disabled={
+                    !selectedNumbers.includes(number) &&
+                    selectedNumbers.length >= 6
+                  }
                 >
                   {number}
                 </Button>
@@ -189,13 +203,20 @@ export default function ComprarTickets() {
             {selectedNumbers.length === 6 && (
               <Card className="bg-[#CAF206]/10 border-[#CAF206]">
                 <CardContent className="p-4">
-                  <p className="text-sm font-medium text-black mb-2">Números seleccionados:</p>
+                  <p className="text-sm font-medium text-black mb-2">
+                    Números seleccionados:
+                  </p>
                   <div className="flex gap-2">
-                    {selectedNumbers.sort((a, b) => a - b).map((number) => (
-                      <Badge key={number} className="bg-[#CAF206] text-black hover:bg-[#CAF206]/90">
-                        {number}
-                      </Badge>
-                    ))}
+                    {selectedNumbers
+                      .sort((a, b) => a - b)
+                      .map((number) => (
+                        <Badge
+                          key={number}
+                          className="bg-[#CAF206] text-black hover:bg-[#CAF206]/90"
+                        >
+                          {number}
+                        </Badge>
+                      ))}
                   </div>
                 </CardContent>
               </Card>
@@ -208,8 +229,8 @@ export default function ComprarTickets() {
           <CardHeader>
             <div className="flex justify-between items-center">
               <CardTitle className="text-black">Quick Pick</CardTitle>
-              <Button 
-                size="sm" 
+              <Button
+                size="sm"
                 onClick={addQuickPick}
                 disabled={quickPicks.length >= 5}
                 className="bg-[#CAF206] text-black hover:bg-[#CAF206]/90"
@@ -230,7 +251,10 @@ export default function ComprarTickets() {
                   <div className="flex justify-between items-center">
                     <div className="flex gap-2">
                       {numbers.map((number, numIndex) => (
-                        <Badge key={numIndex} className="bg-[#CAF206] text-black">
+                        <Badge
+                          key={numIndex}
+                          className="bg-[#CAF206] text-black"
+                        >
                           {number}
                         </Badge>
                       ))}
@@ -255,7 +279,9 @@ export default function ComprarTickets() {
           <CardContent className="p-4">
             <div className="flex justify-between items-center">
               <span className="text-sm text-gray-500">Tu saldo actual:</span>
-              <span className="font-bold text-black">${balance.toLocaleString()} USDT</span>
+              <span className="font-bold text-black">
+                ${balance.toLocaleString()} USDT
+              </span>
             </div>
           </CardContent>
         </Card>
@@ -266,24 +292,27 @@ export default function ComprarTickets() {
         <div className="flex justify-between items-center">
           <div>
             <p className="text-sm text-gray-500">Total a pagar:</p>
-            <p className="text-2xl font-bold text-[#CAF206]">${getTotalCost()} USDT</p>
+            <p className="text-2xl font-bold text-[#CAF206]">
+              ${getTotalCost()} USDT
+            </p>
           </div>
           <div className="text-right">
             <p className="text-sm text-gray-500">Boletos:</p>
             <p className="text-lg font-bold text-black">{getTotalTickets()}</p>
           </div>
         </div>
-        
-        <Button 
+
+        <Button
           className="w-full bg-[#CAF206] text-black hover:bg-[#CAF206]/90 h-12"
           onClick={handleBuyTickets}
           disabled={getTotalCost() === 0}
         >
           Comprar boletos
         </Button>
-        
+
         <p className="text-xs text-gray-400 text-center">
-          Tu participación está sujeta a reglas públicas. No se garantizan premios. Ver términos del sorteo
+          Tu participación está sujeta a reglas públicas. No se garantizan
+          premios. Ver términos del sorteo
         </p>
       </div>
     </div>
