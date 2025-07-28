@@ -35,10 +35,10 @@ export default function OnboardingWalkthrough1() {
       {/* Content */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 text-center">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-lotto-black mb-4 max-w-xs leading-tight">
+          <h1 className="text-3xl font-bold text-lotto-text-primary mb-4 max-w-xs leading-tight">
             Juega y gana con criptomonedas, cada semana
           </h1>
-          <p className="text-lg text-lotto-black/80 max-w-sm">
+          <p className="text-lg text-lotto-text-secondary max-w-sm">
             LottoCoin es una plataforma de lotería en USDT (TRC-20) donde los premios se reparten siempre de forma garantizada y transparente.
           </p>
         </div>
