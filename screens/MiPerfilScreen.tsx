@@ -62,7 +62,9 @@ export default function MiPerfilScreen(): JSX.Element {
     setIsEditing(false);
   };
 
-  const handleNotificationChange = (key: keyof UserProfile["notifications"]) => {
+  const handleNotificationChange = (
+    key: keyof UserProfile["notifications"],
+  ) => {
     setEditedProfile({
       ...editedProfile,
       notifications: {
@@ -78,12 +80,12 @@ export default function MiPerfilScreen(): JSX.Element {
       "¿Estás seguro de que quieres cerrar sesión?",
       [
         { text: "Cancelar", style: "cancel" },
-        { 
-          text: "Cerrar sesión", 
+        {
+          text: "Cerrar sesión",
           style: "destructive",
-          onPress: () => navigation.navigate("Landing")
-        }
-      ]
+          onPress: () => navigation.navigate("Landing"),
+        },
+      ],
     );
   };
 
@@ -93,45 +95,46 @@ export default function MiPerfilScreen(): JSX.Element {
       "Esta acción es irreversible. ¿Estás seguro de que quieres eliminar tu cuenta?",
       [
         { text: "Cancelar", style: "cancel" },
-        { 
-          text: "Eliminar", 
+        {
+          text: "Eliminar",
           style: "destructive",
-          onPress: () => Alert.alert("Info", "Función de eliminación en desarrollo")
-        }
-      ]
+          onPress: () =>
+            Alert.alert("Info", "Función de eliminación en desarrollo"),
+        },
+      ],
     );
   };
 
   const menuItems = [
-    { 
-      id: "security", 
-      title: "Seguridad y privacidad", 
-      icon: "🔒", 
-      onPress: () => Alert.alert("Info", "Próximamente disponible") 
+    {
+      id: "security",
+      title: "Seguridad y privacidad",
+      icon: "🔒",
+      onPress: () => Alert.alert("Info", "Próximamente disponible"),
     },
-    { 
-      id: "payment", 
-      title: "Métodos de pago", 
-      icon: "💳", 
-      onPress: () => Alert.alert("Info", "Próximamente disponible") 
+    {
+      id: "payment",
+      title: "Métodos de pago",
+      icon: "💳",
+      onPress: () => Alert.alert("Info", "Próximamente disponible"),
     },
-    { 
-      id: "history", 
-      title: "Historial de sorteos", 
-      icon: "📋", 
-      onPress: () => Alert.alert("Info", "Próximamente disponible") 
+    {
+      id: "history",
+      title: "Historial de sorteos",
+      icon: "📋",
+      onPress: () => Alert.alert("Info", "Próximamente disponible"),
     },
-    { 
-      id: "support", 
-      title: "Ayuda y soporte", 
-      icon: "❓", 
-      onPress: () => Alert.alert("Info", "Próximamente disponible") 
+    {
+      id: "support",
+      title: "Ayuda y soporte",
+      icon: "❓",
+      onPress: () => Alert.alert("Info", "Próximamente disponible"),
     },
-    { 
-      id: "terms", 
-      title: "Términos y condiciones", 
-      icon: "📄", 
-      onPress: () => Alert.alert("Info", "Próximamente disponible") 
+    {
+      id: "terms",
+      title: "Términos y condiciones",
+      icon: "📄",
+      onPress: () => Alert.alert("Info", "Próximamente disponible"),
     },
   ];
 
@@ -175,10 +178,13 @@ export default function MiPerfilScreen(): JSX.Element {
           <View style={styles.profileCard}>
             <View style={styles.avatar}>
               <Text style={styles.avatarText}>
-                {profile.name.split(' ').map(n => n[0]).join('')}
+                {profile.name
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
               </Text>
             </View>
-            
+
             <View style={styles.profileInfo}>
               <View style={styles.inputGroup}>
                 <Text style={styles.inputLabel}>Nombre completo</Text>
@@ -255,7 +261,7 @@ export default function MiPerfilScreen(): JSX.Element {
 
           <View style={styles.notificationsSection}>
             <Text style={styles.sectionTitle}>Notificaciones</Text>
-            
+
             <View style={styles.notificationItem}>
               <View style={styles.notificationLeft}>
                 <Text style={styles.notificationTitle}>Premios ganados</Text>

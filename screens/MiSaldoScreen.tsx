@@ -31,7 +31,7 @@ interface Transaction {
 
 export default function MiSaldoScreen(): JSX.Element {
   const navigation = useNavigation<MiSaldoScreenNavigationProp>();
-  const [balance] = useState(1250.50);
+  const [balance] = useState(1250.5);
   const [showAddFunds, setShowAddFunds] = useState(false);
   const [addAmount, setAddAmount] = useState("");
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null);
@@ -44,7 +44,7 @@ export default function MiSaldoScreen(): JSX.Element {
       amount: 500,
       description: "Depósito con tarjeta",
       date: "2024-01-15",
-      status: "completed"
+      status: "completed",
     },
     {
       id: "2",
@@ -52,7 +52,7 @@ export default function MiSaldoScreen(): JSX.Element {
       amount: -50,
       description: "Compra de boleto #12345",
       date: "2024-01-14",
-      status: "completed"
+      status: "completed",
     },
     {
       id: "3",
@@ -60,7 +60,7 @@ export default function MiSaldoScreen(): JSX.Element {
       amount: 800,
       description: "Premio - Sorteo #456",
       date: "2024-01-12",
-      status: "completed"
+      status: "completed",
     },
     {
       id: "4",
@@ -68,7 +68,7 @@ export default function MiSaldoScreen(): JSX.Element {
       amount: -100,
       description: "Compra de 2 boletos",
       date: "2024-01-10",
-      status: "completed"
+      status: "completed",
     },
     {
       id: "5",
@@ -76,15 +76,15 @@ export default function MiSaldoScreen(): JSX.Element {
       amount: -200,
       description: "Retiro a cuenta bancaria",
       date: "2024-01-08",
-      status: "pending"
-    }
+      status: "pending",
+    },
   ]);
 
   const paymentMethods = [
     { id: "card", name: "Tarjeta de Crédito/Débito", icon: "💳" },
     { id: "bank", name: "Transferencia Bancaria", icon: "🏦" },
     { id: "paypal", name: "PayPal", icon: "💰" },
-    { id: "crypto", name: "Criptomonedas", icon: "₿" }
+    { id: "crypto", name: "Criptomonedas", icon: "₿" },
   ];
 
   const quickAmounts = [100, 250, 500, 1000];
@@ -110,19 +110,19 @@ export default function MiSaldoScreen(): JSX.Element {
 
     Alert.alert(
       "Confirmar depósito",
-      `¿Agregar $${addAmount} usando ${paymentMethods.find(m => m.id === selectedMethod)?.name}?`,
+      `¿Agregar $${addAmount} usando ${paymentMethods.find((m) => m.id === selectedMethod)?.name}?`,
       [
         { text: "Cancelar", style: "cancel" },
-        { 
-          text: "Confirmar", 
+        {
+          text: "Confirmar",
           onPress: () => {
             Alert.alert("¡Éxito!", "Fondos agregados exitosamente");
             setShowAddFunds(false);
             setAddAmount("");
             setSelectedMethod(null);
-          }
-        }
-      ]
+          },
+        },
+      ],
     );
   };
 
@@ -132,18 +132,26 @@ export default function MiSaldoScreen(): JSX.Element {
       "¿Deseas retirar fondos a tu cuenta bancaria registrada?",
       [
         { text: "Cancelar", style: "cancel" },
-        { text: "Continuar", onPress: () => Alert.alert("Info", "Función de retiro en desarrollo") }
-      ]
+        {
+          text: "Continuar",
+          onPress: () => Alert.alert("Info", "Función de retiro en desarrollo"),
+        },
+      ],
     );
   };
 
   const getTransactionIcon = (type: string) => {
     switch (type) {
-      case "deposit": return "💰";
-      case "withdrawal": return "💸";
-      case "ticket": return "🎫";
-      case "win": return "🏆";
-      default: return "💰";
+      case "deposit":
+        return "💰";
+      case "withdrawal":
+        return "💸";
+      case "ticket":
+        return "🎫";
+      case "win":
+        return "🏆";
+      default:
+        return "💰";
     }
   };
 
@@ -162,10 +170,14 @@ export default function MiSaldoScreen(): JSX.Element {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case "completed": return Colors.success;
-      case "pending": return Colors.warning;
-      case "failed": return Colors.destructive;
-      default: return Colors.textSecondary;
+      case "completed":
+        return Colors.success;
+      case "pending":
+        return Colors.warning;
+      case "failed":
+        return Colors.destructive;
+      default:
+        return Colors.textSecondary;
     }
   };
 
@@ -221,7 +233,7 @@ export default function MiSaldoScreen(): JSX.Element {
               ]}
             >
               <Text style={styles.addFundsTitle}>Agregar fondos</Text>
-              
+
               <Text style={styles.sectionLabel}>Monto</Text>
               <TextInput
                 style={styles.amountInput}
@@ -231,21 +243,25 @@ export default function MiSaldoScreen(): JSX.Element {
                 onChangeText={setAddAmount}
                 keyboardType="numeric"
               />
-              
+
               <View style={styles.quickAmounts}>
                 {quickAmounts.map((amount) => (
                   <TouchableOpacity
                     key={amount}
                     style={[
                       styles.quickAmountButton,
-                      addAmount === amount.toString() && styles.quickAmountButtonSelected
+                      addAmount === amount.toString() &&
+                        styles.quickAmountButtonSelected,
                     ]}
                     onPress={() => handleQuickAmount(amount)}
                   >
-                    <Text style={[
-                      styles.quickAmountText,
-                      addAmount === amount.toString() && styles.quickAmountTextSelected
-                    ]}>
+                    <Text
+                      style={[
+                        styles.quickAmountText,
+                        addAmount === amount.toString() &&
+                          styles.quickAmountTextSelected,
+                      ]}
+                    >
                       ${amount}
                     </Text>
                   </TouchableOpacity>
@@ -258,31 +274,39 @@ export default function MiSaldoScreen(): JSX.Element {
                   key={method.id}
                   style={[
                     styles.paymentMethod,
-                    selectedMethod === method.id && styles.paymentMethodSelected
+                    selectedMethod === method.id &&
+                      styles.paymentMethodSelected,
                   ]}
                   onPress={() => setSelectedMethod(method.id)}
                 >
                   <Text style={styles.paymentMethodIcon}>{method.icon}</Text>
                   <Text style={styles.paymentMethodName}>{method.name}</Text>
-                  <View style={[
-                    styles.radioButton,
-                    selectedMethod === method.id && styles.radioButtonSelected
-                  ]} />
+                  <View
+                    style={[
+                      styles.radioButton,
+                      selectedMethod === method.id &&
+                        styles.radioButtonSelected,
+                    ]}
+                  />
                 </TouchableOpacity>
               ))}
 
               <TouchableOpacity
                 style={[
                   styles.addFundsButton,
-                  (!addAmount || !selectedMethod) && styles.addFundsButtonDisabled
+                  (!addAmount || !selectedMethod) &&
+                    styles.addFundsButtonDisabled,
                 ]}
                 onPress={handleAddFunds}
                 disabled={!addAmount || !selectedMethod}
               >
-                <Text style={[
-                  styles.addFundsButtonText,
-                  (!addAmount || !selectedMethod) && styles.addFundsButtonTextDisabled
-                ]}>
+                <Text
+                  style={[
+                    styles.addFundsButtonText,
+                    (!addAmount || !selectedMethod) &&
+                      styles.addFundsButtonTextDisabled,
+                  ]}
+                >
                   Agregar fondos
                 </Text>
               </TouchableOpacity>
@@ -291,7 +315,7 @@ export default function MiSaldoScreen(): JSX.Element {
 
           <View style={styles.transactionsSection}>
             <Text style={styles.sectionTitle}>Historial de transacciones</Text>
-            
+
             {transactions.map((transaction) => (
               <View key={transaction.id} style={styles.transactionItem}>
                 <View style={styles.transactionLeft}>
@@ -302,22 +326,32 @@ export default function MiSaldoScreen(): JSX.Element {
                     <Text style={styles.transactionDescription}>
                       {transaction.description}
                     </Text>
-                    <Text style={styles.transactionDate}>{transaction.date}</Text>
+                    <Text style={styles.transactionDate}>
+                      {transaction.date}
+                    </Text>
                   </View>
                 </View>
                 <View style={styles.transactionRight}>
-                  <Text style={[
-                    styles.transactionAmount,
-                    { color: getTransactionColor(transaction.type) }
-                  ]}>
-                    {transaction.amount > 0 ? '+' : ''}${Math.abs(transaction.amount)}
+                  <Text
+                    style={[
+                      styles.transactionAmount,
+                      { color: getTransactionColor(transaction.type) },
+                    ]}
+                  >
+                    {transaction.amount > 0 ? "+" : ""}$
+                    {Math.abs(transaction.amount)}
                   </Text>
-                  <Text style={[
-                    styles.transactionStatus,
-                    { color: getStatusColor(transaction.status) }
-                  ]}>
-                    {transaction.status === "completed" ? "Completado" :
-                     transaction.status === "pending" ? "Pendiente" : "Fallido"}
+                  <Text
+                    style={[
+                      styles.transactionStatus,
+                      { color: getStatusColor(transaction.status) },
+                    ]}
+                  >
+                    {transaction.status === "completed"
+                      ? "Completado"
+                      : transaction.status === "pending"
+                        ? "Pendiente"
+                        : "Fallido"}
                   </Text>
                 </View>
               </View>

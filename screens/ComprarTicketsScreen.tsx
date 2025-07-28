@@ -31,14 +31,22 @@ export default function ComprarTicketsScreen(): JSX.Element {
 
   const toggleNumber = (number: number) => {
     if (selectedNumbers.includes(number)) {
-      setSelectedNumbers(selectedNumbers.filter(n => n !== number));
+      setSelectedNumbers(selectedNumbers.filter((n) => n !== number));
     } else if (selectedNumbers.length < 6) {
       setSelectedNumbers([...selectedNumbers, number]);
-      
+
       // Animate selection
       Animated.sequence([
-        Animated.timing(scaleAnim, { duration: 100, toValue: 1.1, useNativeDriver: true }),
-        Animated.timing(scaleAnim, { duration: 100, toValue: 1, useNativeDriver: true }),
+        Animated.timing(scaleAnim, {
+          duration: 100,
+          toValue: 1.1,
+          useNativeDriver: true,
+        }),
+        Animated.timing(scaleAnim, {
+          duration: 100,
+          toValue: 1,
+          useNativeDriver: true,
+        }),
       ]).start();
     }
   };
@@ -75,10 +83,14 @@ export default function ComprarTicketsScreen(): JSX.Element {
   };
 
   const handleBuyTickets = () => {
-    const totalTickets = (selectedNumbers.length === 6 ? 1 : 0) + quickPicks.length;
-    
+    const totalTickets =
+      (selectedNumbers.length === 6 ? 1 : 0) + quickPicks.length;
+
     if (totalTickets === 0) {
-      Alert.alert("Error", "Selecciona al menos 6 números o genera un Quick Pick");
+      Alert.alert(
+        "Error",
+        "Selecciona al menos 6 números o genera un Quick Pick",
+      );
       return;
     }
 
@@ -87,15 +99,15 @@ export default function ComprarTicketsScreen(): JSX.Element {
       `¿Comprar ${totalTickets} boleto(s) por $${getTotalCost()}?`,
       [
         { text: "Cancelar", style: "cancel" },
-        { 
-          text: "Comprar", 
+        {
+          text: "Comprar",
           onPress: () => {
             Alert.alert("¡Éxito!", "Boletos comprados exitosamente", [
-              { text: "OK", onPress: () => navigation.navigate("Dashboard") }
+              { text: "OK", onPress: () => navigation.navigate("Dashboard") },
             ]);
-          }
-        }
-      ]
+          },
+        },
+      ],
     );
   };
 
@@ -117,7 +129,9 @@ export default function ComprarTicketsScreen(): JSX.Element {
           <View style={styles.priceCard}>
             <Text style={styles.priceTitle}>Precio por boleto</Text>
             <Text style={styles.price}>$50.00</Text>
-            <Text style={styles.priceSubtitle}>Selecciona 6 números del 1 al 49</Text>
+            <Text style={styles.priceSubtitle}>
+              Selecciona 6 números del 1 al 49
+            </Text>
           </View>
 
           <View style={styles.section}>
@@ -127,7 +141,7 @@ export default function ComprarTicketsScreen(): JSX.Element {
                 <Text style={styles.clearText}>Limpiar</Text>
               </TouchableOpacity>
             </View>
-            
+
             <Text style={styles.selectedCount}>
               {selectedNumbers.length}/6 números seleccionados
             </Text>
@@ -138,16 +152,23 @@ export default function ComprarTicketsScreen(): JSX.Element {
                   key={number}
                   style={[
                     styles.numberButton,
-                    selectedNumbers.includes(number) && styles.numberButtonSelected
+                    selectedNumbers.includes(number) &&
+                      styles.numberButtonSelected,
                   ]}
                   onPress={() => toggleNumber(number)}
-                  disabled={!selectedNumbers.includes(number) && selectedNumbers.length >= 6}
+                  disabled={
+                    !selectedNumbers.includes(number) &&
+                    selectedNumbers.length >= 6
+                  }
                 >
                   <Animated.Text
                     style={[
                       styles.numberText,
-                      selectedNumbers.includes(number) && styles.numberTextSelected,
-                      selectedNumbers.includes(number) && { transform: [{ scale: scaleAnim }] }
+                      selectedNumbers.includes(number) &&
+                        styles.numberTextSelected,
+                      selectedNumbers.includes(number) && {
+                        transform: [{ scale: scaleAnim }],
+                      },
                     ]}
                   >
                     {number}
@@ -160,11 +181,13 @@ export default function ComprarTicketsScreen(): JSX.Element {
               <View style={styles.selectedNumbers}>
                 <Text style={styles.selectedTitle}>Números seleccionados:</Text>
                 <View style={styles.selectedRow}>
-                  {selectedNumbers.sort((a, b) => a - b).map((number, index) => (
-                    <View key={number} style={styles.selectedBall}>
-                      <Text style={styles.selectedBallText}>{number}</Text>
-                    </View>
-                  ))}
+                  {selectedNumbers
+                    .sort((a, b) => a - b)
+                    .map((number, index) => (
+                      <View key={number} style={styles.selectedBall}>
+                        <Text style={styles.selectedBallText}>{number}</Text>
+                      </View>
+                    ))}
                 </View>
               </View>
             )}
@@ -212,19 +235,21 @@ export default function ComprarTicketsScreen(): JSX.Element {
           <Text style={styles.totalLabel}>Total a pagar:</Text>
           <Text style={styles.totalAmount}>${getTotalCost()}</Text>
         </View>
-        
+
         <TouchableOpacity
           style={[
             styles.buyButton,
-            getTotalCost() === 0 && styles.buyButtonDisabled
+            getTotalCost() === 0 && styles.buyButtonDisabled,
           ]}
           onPress={handleBuyTickets}
           disabled={getTotalCost() === 0}
         >
-          <Text style={[
-            styles.buyButtonText,
-            getTotalCost() === 0 && styles.buyButtonTextDisabled
-          ]}>
+          <Text
+            style={[
+              styles.buyButtonText,
+              getTotalCost() === 0 && styles.buyButtonTextDisabled,
+            ]}
+          >
             Comprar boletos
           </Text>
         </TouchableOpacity>

@@ -36,28 +36,31 @@ export default function NotificacionesScreen(): JSX.Element {
       id: "1",
       type: "win",
       title: "¡Felicidades! Has ganado un premio",
-      message: "Tu boleto #12345 ganó $800 en el sorteo del 15 de enero. El premio se ha depositado en tu cuenta.",
+      message:
+        "Tu boleto #12345 ganó $800 en el sorteo del 15 de enero. El premio se ha depositado en tu cuenta.",
       timestamp: "2024-01-15T18:30:00Z",
       isRead: false,
-      priority: "high"
+      priority: "high",
     },
     {
       id: "2",
       type: "draw",
       title: "Resultados del sorteo disponibles",
-      message: "Ya están disponibles los resultados del sorteo #456. Revisa tus boletos para ver si ganaste.",
+      message:
+        "Ya están disponibles los resultados del sorteo #456. Revisa tus boletos para ver si ganaste.",
       timestamp: "2024-01-15T15:00:00Z",
       isRead: false,
-      priority: "medium"
+      priority: "medium",
     },
     {
       id: "3",
       type: "promotion",
       title: "Oferta especial: 20% de descuento",
-      message: "Por tiempo limitado, obtén 20% de descuento en la compra de 5 o más boletos. ¡No te lo pierdas!",
+      message:
+        "Por tiempo limitado, obtén 20% de descuento en la compra de 5 o más boletos. ¡No te lo pierdas!",
       timestamp: "2024-01-14T10:00:00Z",
       isRead: true,
-      priority: "medium"
+      priority: "medium",
     },
     {
       id: "4",
@@ -66,26 +69,28 @@ export default function NotificacionesScreen(): JSX.Element {
       message: "Se han agregado $500 a tu cuenta. Tu nuevo saldo es $1,250.50.",
       timestamp: "2024-01-13T14:20:00Z",
       isRead: true,
-      priority: "low"
+      priority: "low",
     },
     {
       id: "5",
       type: "draw",
       title: "Próximo sorteo: 20 de enero",
-      message: "El siguiente sorteo será el 20 de enero a las 8:00 PM. Asegúrate de comprar tus boletos antes de las 6:00 PM.",
+      message:
+        "El siguiente sorteo será el 20 de enero a las 8:00 PM. Asegúrate de comprar tus boletos antes de las 6:00 PM.",
       timestamp: "2024-01-12T09:00:00Z",
       isRead: true,
-      priority: "medium"
+      priority: "medium",
     },
     {
       id: "6",
       type: "system",
       title: "Mantenimiento programado",
-      message: "El sistema estará en mantenimiento el 22 de enero de 2:00 AM a 4:00 AM. Durante este tiempo no podrás acceder a la aplicación.",
+      message:
+        "El sistema estará en mantenimiento el 22 de enero de 2:00 AM a 4:00 AM. Durante este tiempo no podrás acceder a la aplicación.",
       timestamp: "2024-01-10T16:00:00Z",
       isRead: true,
-      priority: "low"
-    }
+      priority: "low",
+    },
   ]);
 
   const filters = [
@@ -94,32 +99,35 @@ export default function NotificacionesScreen(): JSX.Element {
     { id: "win", name: "Premios" },
     { id: "draw", name: "Sorteos" },
     { id: "promotion", name: "Promociones" },
-    { id: "account", name: "Cuenta" }
+    { id: "account", name: "Cuenta" },
   ];
 
   const getFilteredNotifications = () => {
     switch (selectedFilter) {
       case "unread":
-        return notifications.filter(n => !n.isRead);
+        return notifications.filter((n) => !n.isRead);
       case "win":
       case "draw":
       case "promotion":
       case "account":
-        return notifications.filter(n => n.type === selectedFilter);
+        return notifications.filter((n) => n.type === selectedFilter);
       default:
         return notifications;
     }
   };
 
   const markAsRead = (id: string) => {
-    setNotifications(notifications.map(n => 
-      n.id === id ? { ...n, isRead: true } : n
-    ));
+    setNotifications(
+      notifications.map((n) => (n.id === id ? { ...n, isRead: true } : n)),
+    );
   };
 
   const markAllAsRead = () => {
-    setNotifications(notifications.map(n => ({ ...n, isRead: true })));
-    Alert.alert("¡Listo!", "Todas las notificaciones han sido marcadas como leídas");
+    setNotifications(notifications.map((n) => ({ ...n, isRead: true })));
+    Alert.alert(
+      "¡Listo!",
+      "Todas las notificaciones han sido marcadas como leídas",
+    );
   };
 
   const deleteNotification = (id: string) => {
@@ -128,12 +136,13 @@ export default function NotificacionesScreen(): JSX.Element {
       "¿Estás seguro de que quieres eliminar esta notificación?",
       [
         { text: "Cancelar", style: "cancel" },
-        { 
-          text: "Eliminar", 
+        {
+          text: "Eliminar",
           style: "destructive",
-          onPress: () => setNotifications(notifications.filter(n => n.id !== id))
-        }
-      ]
+          onPress: () =>
+            setNotifications(notifications.filter((n) => n.id !== id)),
+        },
+      ],
     );
   };
 
@@ -143,32 +152,42 @@ export default function NotificacionesScreen(): JSX.Element {
       "¿Estás seguro de que quieres eliminar todas las notificaciones?",
       [
         { text: "Cancelar", style: "cancel" },
-        { 
-          text: "Eliminar todas", 
+        {
+          text: "Eliminar todas",
           style: "destructive",
-          onPress: () => setNotifications([])
-        }
-      ]
+          onPress: () => setNotifications([]),
+        },
+      ],
     );
   };
 
   const getNotificationIcon = (type: string) => {
     switch (type) {
-      case "win": return "🏆";
-      case "draw": return "🎱";
-      case "promotion": return "🎁";
-      case "account": return "💰";
-      case "system": return "⚙️";
-      default: return "📢";
+      case "win":
+        return "🏆";
+      case "draw":
+        return "🎱";
+      case "promotion":
+        return "🎁";
+      case "account":
+        return "💰";
+      case "system":
+        return "⚙️";
+      default:
+        return "📢";
     }
   };
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case "high": return Colors.destructive;
-      case "medium": return Colors.warning;
-      case "low": return Colors.success;
-      default: return Colors.textSecondary;
+      case "high":
+        return Colors.destructive;
+      case "medium":
+        return Colors.warning;
+      case "low":
+        return Colors.success;
+      default:
+        return Colors.textSecondary;
     }
   };
 
@@ -177,7 +196,7 @@ export default function NotificacionesScreen(): JSX.Element {
     const now = new Date();
     const diffTime = Math.abs(now.getTime() - date.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
+
     if (diffDays === 1) {
       return "Hoy";
     } else if (diffDays === 2) {
@@ -185,14 +204,14 @@ export default function NotificacionesScreen(): JSX.Element {
     } else if (diffDays <= 7) {
       return `Hace ${diffDays - 1} días`;
     } else {
-      return date.toLocaleDateString("es-ES", { 
-        day: "numeric", 
-        month: "short" 
+      return date.toLocaleDateString("es-ES", {
+        day: "numeric",
+        month: "short",
       });
     }
   };
 
-  const unreadCount = notifications.filter(n => !n.isRead).length;
+  const unreadCount = notifications.filter((n) => !n.isRead).length;
   const filteredNotifications = getFilteredNotifications();
 
   return (
@@ -212,29 +231,32 @@ export default function NotificacionesScreen(): JSX.Element {
             </View>
           )}
         </View>
-        <TouchableOpacity
-          onPress={markAllAsRead}
-          style={styles.markAllButton}
-        >
+        <TouchableOpacity onPress={markAllAsRead} style={styles.markAllButton}>
           <Text style={styles.markAllText}>Marcar todas</Text>
         </TouchableOpacity>
       </View>
 
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filtersContainer}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.filtersContainer}
+      >
         <View style={styles.filters}>
           {filters.map((filter) => (
             <TouchableOpacity
               key={filter.id}
               style={[
                 styles.filterButton,
-                selectedFilter === filter.id && styles.filterButtonActive
+                selectedFilter === filter.id && styles.filterButtonActive,
               ]}
               onPress={() => setSelectedFilter(filter.id)}
             >
-              <Text style={[
-                styles.filterButtonText,
-                selectedFilter === filter.id && styles.filterButtonTextActive
-              ]}>
+              <Text
+                style={[
+                  styles.filterButtonText,
+                  selectedFilter === filter.id && styles.filterButtonTextActive,
+                ]}
+              >
                 {filter.name}
               </Text>
             </TouchableOpacity>
@@ -249,10 +271,9 @@ export default function NotificacionesScreen(): JSX.Element {
               <Text style={styles.emptyStateIcon}>📭</Text>
               <Text style={styles.emptyStateTitle}>No hay notificaciones</Text>
               <Text style={styles.emptyStateMessage}>
-                {selectedFilter === "all" 
+                {selectedFilter === "all"
                   ? "No tienes notificaciones en este momento"
-                  : `No tienes notificaciones de tipo "${filters.find(f => f.id === selectedFilter)?.name}"`
-                }
+                  : `No tienes notificaciones de tipo "${filters.find((f) => f.id === selectedFilter)?.name}"`}
               </Text>
             </View>
           ) : (
@@ -262,7 +283,7 @@ export default function NotificacionesScreen(): JSX.Element {
                   key={notification.id}
                   style={[
                     styles.notificationCard,
-                    !notification.isRead && styles.notificationCardUnread
+                    !notification.isRead && styles.notificationCardUnread,
                   ]}
                   onPress={() => markAsRead(notification.id)}
                   onLongPress={() => deleteNotification(notification.id)}
@@ -273,10 +294,13 @@ export default function NotificacionesScreen(): JSX.Element {
                         {getNotificationIcon(notification.type)}
                       </Text>
                       <View style={styles.notificationContent}>
-                        <Text style={[
-                          styles.notificationTitle,
-                          !notification.isRead && styles.notificationTitleUnread
-                        ]}>
+                        <Text
+                          style={[
+                            styles.notificationTitle,
+                            !notification.isRead &&
+                              styles.notificationTitleUnread,
+                          ]}
+                        >
                           {notification.title}
                         </Text>
                         <Text style={styles.notificationTimestamp}>
@@ -285,10 +309,16 @@ export default function NotificacionesScreen(): JSX.Element {
                       </View>
                     </View>
                     <View style={styles.notificationRight}>
-                      <View style={[
-                        styles.priorityDot,
-                        { backgroundColor: getPriorityColor(notification.priority) }
-                      ]} />
+                      <View
+                        style={[
+                          styles.priorityDot,
+                          {
+                            backgroundColor: getPriorityColor(
+                              notification.priority,
+                            ),
+                          },
+                        ]}
+                      />
                       {!notification.isRead && (
                         <View style={styles.unreadDot} />
                       )}
@@ -305,7 +335,9 @@ export default function NotificacionesScreen(): JSX.Element {
                   style={styles.clearAllButton}
                   onPress={clearAllNotifications}
                 >
-                  <Text style={styles.clearAllButtonText}>Limpiar todas las notificaciones</Text>
+                  <Text style={styles.clearAllButtonText}>
+                    Limpiar todas las notificaciones
+                  </Text>
                 </TouchableOpacity>
               )}
             </>

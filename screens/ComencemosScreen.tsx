@@ -23,7 +23,14 @@ type ComencemosScreenNavigationProp = StackNavigationProp<
 export default function ComencemosScreen(): JSX.Element {
   const navigation = useNavigation<ComencemosScreenNavigationProp>();
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [verificationCode, setVerificationCode] = useState(["", "", "", "", "", ""]);
+  const [verificationCode, setVerificationCode] = useState([
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ]);
   const [isCodeSent, setIsCodeSent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const codeInputRefs = useRef<Array<TextInput | null>>([]);
@@ -31,17 +38,25 @@ export default function ComencemosScreen(): JSX.Element {
 
   const handleSendCode = async () => {
     if (phoneNumber.length < 10) return;
-    
+
     setIsLoading(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       setIsCodeSent(true);
       setIsLoading(false);
-      
+
       Animated.sequence([
-        Animated.timing(fadeAnim, { duration: 300, toValue: 0, useNativeDriver: true }),
-        Animated.timing(fadeAnim, { duration: 300, toValue: 1, useNativeDriver: true }),
+        Animated.timing(fadeAnim, {
+          duration: 300,
+          toValue: 0,
+          useNativeDriver: true,
+        }),
+        Animated.timing(fadeAnim, {
+          duration: 300,
+          toValue: 1,
+          useNativeDriver: true,
+        }),
       ]).start();
     }, 2000);
   };
@@ -65,7 +80,7 @@ export default function ComencemosScreen(): JSX.Element {
   };
 
   const isPhoneValid = phoneNumber.length >= 10;
-  const isCodeComplete = verificationCode.every(digit => digit !== "");
+  const isCodeComplete = verificationCode.every((digit) => digit !== "");
 
   return (
     <SafeAreaView style={styles.container}>
@@ -87,10 +102,9 @@ export default function ComencemosScreen(): JSX.Element {
             <View style={styles.titleContainer}>
               <Text style={styles.title}>¡Comencemos!</Text>
               <Text style={styles.subtitle}>
-                {!isCodeSent 
-                  ? "Ingresa tu número de teléfono para verificar tu identidad" 
-                  : "Ingresa el código de 6 dígitos que enviamos a tu teléfono"
-                }
+                {!isCodeSent
+                  ? "Ingresa tu número de teléfono para verificar tu identidad"
+                  : "Ingresa el código de 6 dígitos que enviamos a tu teléfono"}
               </Text>
             </View>
 
@@ -108,19 +122,21 @@ export default function ComencemosScreen(): JSX.Element {
                     maxLength={10}
                   />
                 </View>
-                
+
                 <TouchableOpacity
                   style={[
                     styles.sendButton,
-                    !isPhoneValid && styles.sendButtonDisabled
+                    !isPhoneValid && styles.sendButtonDisabled,
                   ]}
                   onPress={handleSendCode}
                   disabled={!isPhoneValid || isLoading}
                 >
-                  <Text style={[
-                    styles.sendButtonText,
-                    !isPhoneValid && styles.sendButtonTextDisabled
-                  ]}>
+                  <Text
+                    style={[
+                      styles.sendButtonText,
+                      !isPhoneValid && styles.sendButtonTextDisabled,
+                    ]}
+                  >
                     {isLoading ? "Enviando..." : "Enviar código"}
                   </Text>
                 </TouchableOpacity>
@@ -128,7 +144,7 @@ export default function ComencemosScreen(): JSX.Element {
             ) : (
               <View style={styles.codeContainer}>
                 <Text style={styles.phoneDisplay}>+52 {phoneNumber}</Text>
-                
+
                 <View style={styles.codeInputContainer}>
                   {verificationCode.map((digit, index) => (
                     <TextInput
@@ -136,7 +152,7 @@ export default function ComencemosScreen(): JSX.Element {
                       ref={(ref) => (codeInputRefs.current[index] = ref)}
                       style={[
                         styles.codeInput,
-                        digit && styles.codeInputFilled
+                        digit && styles.codeInputFilled,
                       ]}
                       value={digit}
                       onChangeText={(text) => handleCodeChange(text, index)}
@@ -151,21 +167,25 @@ export default function ComencemosScreen(): JSX.Element {
                   style={styles.resendButton}
                   onPress={() => setIsCodeSent(false)}
                 >
-                  <Text style={styles.resendText}>¿No recibiste el código? Reenviar</Text>
+                  <Text style={styles.resendText}>
+                    ¿No recibiste el código? Reenviar
+                  </Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                   style={[
                     styles.verifyButton,
-                    !isCodeComplete && styles.verifyButtonDisabled
+                    !isCodeComplete && styles.verifyButtonDisabled,
                   ]}
                   onPress={handleVerifyCode}
                   disabled={!isCodeComplete}
                 >
-                  <Text style={[
-                    styles.verifyButtonText,
-                    !isCodeComplete && styles.verifyButtonTextDisabled
-                  ]}>
+                  <Text
+                    style={[
+                      styles.verifyButtonText,
+                      !isCodeComplete && styles.verifyButtonTextDisabled,
+                    ]}
+                  >
                     Verificar
                   </Text>
                 </TouchableOpacity>
