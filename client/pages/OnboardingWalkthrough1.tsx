@@ -15,11 +15,11 @@ export default function OnboardingWalkthrough1() {
             <div className="w-1 h-3 bg-lotto-text-primary rounded-full"></div>
             <div className="w-1 h-3 bg-lotto-text-primary/40 rounded-full"></div>
           </div>
-          <svg className="w-6 h-4 fill-lotto-black ml-1" viewBox="0 0 24 16">
+          <svg className="w-6 h-4 fill-lotto-text-primary ml-1" viewBox="0 0 24 16">
             <path d="M2 4h20v8H2z" />
             <path d="M24 6v4h2V6z" />
           </svg>
-          <div className="w-6 h-3 bg-lotto-black rounded-sm ml-1">
+          <div className="w-6 h-3 bg-lotto-text-primary rounded-sm ml-1">
             <div className="w-4 h-2 bg-white rounded-sm mt-0.5 mx-auto"></div>
           </div>
         </div>
