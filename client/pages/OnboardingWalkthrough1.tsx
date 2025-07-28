@@ -6,7 +6,7 @@ export default function OnboardingWalkthrough1() {
   return (
     <div className="min-h-screen bg-lotto-background flex flex-col relative overflow-hidden">
       {/* Mobile status bar */}
-      <div className="w-full flex justify-between items-center px-6 pt-4 text-lotto-black font-semibold">
+      <div className="w-full flex justify-between items-center px-6 pt-4 text-lotto-text-primary font-semibold">
         <span>12:00</span>
         <div className="flex items-center gap-1">
           <div className="flex gap-1">
