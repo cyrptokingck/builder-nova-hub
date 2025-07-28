@@ -16,20 +16,26 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.lottocoin.mobile"
+      "bundleIdentifier": "com.lottocoin.mobile",
+      "infoPlist": {
+        "UIBackgroundModes": ["background-fetch"]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#CAF206"
       },
-      "package": "com.lottocoin.mobile"
+      "package": "com.lottocoin.mobile",
+      "permissions": ["INTERNET", "ACCESS_NETWORK_STATE"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-router"
-    ]
+    "extra": {
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    }
   }
 }
