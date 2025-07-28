@@ -121,7 +121,10 @@ export default function Dashboard() {
             </div>
             <span className="text-xs text-lotto-green font-medium">Home</span>
           </div>
-          <Link to="/comprar-tickets" className="flex flex-col items-center gap-1">
+          <Link
+            to="/comprar-tickets"
+            className="flex flex-col items-center gap-1"
+          >
             <div className="w-12 h-12 flex items-center justify-center">
               <FileText className="w-6 h-6 text-white" />
             </div>
