@@ -94,18 +94,18 @@ export default function OnboardingWalkthrough1() {
       <div className="px-6 pb-8">
         {/* Progress dots */}
         <div className="flex justify-center gap-2 mb-6">
-          <div className="w-6 h-2 bg-lotto-black rounded-full"></div>
-          <div className="w-2 h-2 bg-lotto-black/40 rounded-full"></div>
-          <div className="w-2 h-2 bg-lotto-black/40 rounded-full"></div>
-          <div className="w-2 h-2 bg-lotto-black/40 rounded-full"></div>
-          <div className="w-2 h-2 bg-lotto-black/40 rounded-full"></div>
+          <div className="w-6 h-2 bg-lotto-text-primary rounded-full"></div>
+          <div className="w-2 h-2 bg-lotto-text-primary/40 rounded-full"></div>
+          <div className="w-2 h-2 bg-lotto-text-primary/40 rounded-full"></div>
+          <div className="w-2 h-2 bg-lotto-text-primary/40 rounded-full"></div>
+          <div className="w-2 h-2 bg-lotto-text-primary/40 rounded-full"></div>
         </div>
 
         {/* Next button */}
         <div className="flex justify-end">
-          <Button 
+          <Button
             asChild
-            className="w-16 h-16 bg-lotto-black text-lotto-green hover:bg-lotto-black/90 rounded-full p-0"
+            className="w-16 h-16 bg-lotto-button-dark text-lotto-green hover:bg-lotto-button-dark/90 rounded-full p-0"
           >
             <Link to="/onboarding-walkthrough-2">
               <ArrowRight className="w-6 h-6" />
@@ -115,7 +115,7 @@ export default function OnboardingWalkthrough1() {
 
         {/* Progress indicator */}
         <div className="flex justify-center pt-4">
-          <div className="w-8 h-1 bg-lotto-black rounded-full"></div>
+          <div className="w-8 h-1 bg-lotto-text-primary rounded-full"></div>
         </div>
       </div>
     </div>
