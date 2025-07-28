@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function OnboardingWalkthrough1() {
   return (
-    <div className="min-h-screen bg-lotto-green flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-lotto-background flex flex-col relative overflow-hidden">
       {/* Mobile status bar */}
       <div className="w-full flex justify-between items-center px-6 pt-4 text-lotto-black font-semibold">
         <span>12:00</span>
