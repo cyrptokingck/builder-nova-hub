@@ -11,11 +11,11 @@ import {
   Animated,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
 import { Colors } from "../constants/Colors";
 
-type ComencemosScreenNavigationProp = StackNavigationProp<
+type ComencemosScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   "Comencemos"
 >;
