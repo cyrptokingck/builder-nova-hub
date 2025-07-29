@@ -152,7 +152,7 @@ export default function ComencemosScreen(): JSX.Element {
                       ref={(ref) => (codeInputRefs.current[index] = ref)}
                       style={[
                         styles.codeInput,
-                        digit && styles.codeInputFilled,
+                        digit ? styles.codeInputFilled : null,
                       ]}
                       value={digit}
                       onChangeText={(text) => handleCodeChange(text, index)}

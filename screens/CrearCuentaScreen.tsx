@@ -173,7 +173,7 @@ const CrearCuentaScreen: React.FC = () => {
           <View style={styles.fieldContainer}>
             <Text style={styles.label}>Email</Text>
             <TextInput
-              style={[styles.input, errors.email && styles.inputError]}
+              style={[styles.input, errors.email ? styles.inputError : null]}
               placeholder="manuel.g.campos.p@gmail.com"
               value={formData.email}
               onChangeText={(text) => setFormData({ ...formData, email: text })}
@@ -195,7 +195,7 @@ const CrearCuentaScreen: React.FC = () => {
                   styles.passwordInput,
                   errors.password && styles.inputError,
                 ]}
-                placeholder="••••••••••"
+                placeholder="��•••••••••"
                 value={formData.password}
                 onChangeText={(text) =>
                   setFormData({ ...formData, password: text })
