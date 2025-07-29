@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../RNApp";
+import { RootStackParamList } from "../App";
 import { Colors } from "../constants/Colors";
 
 type ComprarTicketsScreenNavigationProp = StackNavigationProp<
@@ -222,7 +222,7 @@ export default function ComprarTicketsScreen(): JSX.Element {
                   onPress={() => removeQuickPick(index)}
                   style={styles.removeButton}
                 >
-                  <Text style={styles.removeButtonText}>✕</Text>
+                  <Text style={styles.removeButtonText}>��</Text>
                 </TouchableOpacity>
               </View>
             ))}

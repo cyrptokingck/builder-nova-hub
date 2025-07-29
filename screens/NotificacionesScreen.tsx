@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../RNApp";
+import { RootStackParamList } from "../App";
 import { Colors } from "../constants/Colors";
 
 type NotificacionesScreenNavigationProp = StackNavigationProp<
@@ -268,7 +268,7 @@ export default function NotificacionesScreen(): JSX.Element {
         <View style={styles.content}>
           {filteredNotifications.length === 0 ? (
             <View style={styles.emptyState}>
-              <Text style={styles.emptyStateIcon}>📭</Text>
+              <Text style={styles.emptyStateIcon}>���</Text>
               <Text style={styles.emptyStateTitle}>No hay notificaciones</Text>
               <Text style={styles.emptyStateMessage}>
                 {selectedFilter === "all"
