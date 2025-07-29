@@ -2,7 +2,7 @@
 export const Colors = {
   // Primary Colors
   primary: "#CAF206", // color-primary (Bright lime green)
-  background: "#CAF206", // color-background
+  background: "#FFFFFF", // color-background (White for app background)
 
   // Text Colors
   textPrimary: "#000000", // color-text-primary (Black)
@@ -18,6 +18,12 @@ export const Colors = {
 
   // Additional UI Colors
   white: "#FFFFFF",
+  cardBackground: "#FFFFFF",
+  inputBackground: "#F9FAFB",
+  border: "#E5E7EB",
+  disabled: "#D1D5DB",
+  destructive: "#F44336",
+  warning: "#F59E0B",
   gray100: "#F5F5F5",
   gray200: "#E5E7EB",
   gray300: "#D1D5DB",
