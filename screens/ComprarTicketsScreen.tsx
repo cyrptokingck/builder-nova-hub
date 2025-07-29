@@ -10,11 +10,11 @@ import {
   Alert,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
 import { Colors } from "../constants/Colors";
 
-type ComprarTicketsScreenNavigationProp = StackNavigationProp<
+type ComprarTicketsScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   "ComprarTickets"
 >;
@@ -51,8 +51,8 @@ export default function ComprarTicketsScreen(): JSX.Element {
     }
   };
 
-  const generateQuickPick = () => {
-    const numbers = [];
+  const generateQuickPick = (): number[] => {
+    const numbers: number[] = [];
     while (numbers.length < 6) {
       const randomNum = Math.floor(Math.random() * 49) + 1;
       if (!numbers.includes(randomNum)) {
