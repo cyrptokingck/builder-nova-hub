@@ -193,7 +193,7 @@ const CrearCuentaScreen: React.FC = () => {
               <TextInput
                 style={[
                   styles.passwordInput,
-                  errors.password && styles.inputError,
+                  errors.password ? styles.inputError : null,
                 ]}
                 placeholder="��•••••••••"
                 value={formData.password}
