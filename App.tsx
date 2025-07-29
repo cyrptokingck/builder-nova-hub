@@ -18,6 +18,8 @@ import ComprarTicketsScreen from "./screens/ComprarTicketsScreen";
 import MiSaldoScreen from "./screens/MiSaldoScreen";
 import MiPerfilScreen from "./screens/MiPerfilScreen";
 import NotificacionesScreen from "./screens/NotificacionesScreen";
+import TerminosScreen from "./screens/TerminosScreen";
+import PrivacidadScreen from "./screens/PrivacidadScreen";
 
 // Define navigation types
 export type RootStackParamList = {
@@ -35,6 +37,8 @@ export type RootStackParamList = {
   MiSaldo: undefined;
   MiPerfil: undefined;
   Notificaciones: undefined;
+  Terminos: undefined;
+  Privacidad: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -85,6 +89,8 @@ export default function App(): JSX.Element {
         <Stack.Screen name="MiSaldo" component={MiSaldoScreen} />
         <Stack.Screen name="MiPerfil" component={MiPerfilScreen} />
         <Stack.Screen name="Notificaciones" component={NotificacionesScreen} />
+        <Stack.Screen name="Terminos" component={TerminosScreen} />
+        <Stack.Screen name="Privacidad" component={PrivacidadScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
